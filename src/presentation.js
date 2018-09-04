@@ -44,9 +44,12 @@ const ChushText = styled(Text)`
   transform: rotate(-45deg);
   font-size: 8em;
   position: absolute;
+  width: 100%;
+  margin-left: -50%;
+  margin-top: -.5em;
   text-align: center;
-  top: 22%;
-  left: 3%;
+  top: 50%;
+  left: 50%;
   font-weight: bold;
   text-shadow: 0 0 15px white, 0 0 30px white, 0 0 45px white, 0 0 60px white;
 `;
@@ -84,9 +87,12 @@ const theme = createTheme(
 
 const planList = [
   'Кто я?',
-  'Кто они?',
-  'Ликбез',
+  'Прошлое',
+  'Настоящее',
+  'При чём тут вы?',
   'Специфика',
+  'Будущее',
+  'Гигиена',
 ];
 
 const plan = (index) => (
@@ -137,14 +143,99 @@ export default class Presentation extends React.Component {
         <Slide>
           <Image width="100%" src={itp} />
           <Notes>
-            Форму T хорошо описывает valve handbook.
+            Эти формы используются для описания навыков.
+            I — один развитый навык. Думаю, так не бывает.
+            Форму T хорошо описывает valve handbook. Дополнительные навыки помогают в основном.
+            Π — два навыка, развитые в сравнимой степени.
+
+            Я учусь программированию с 8 лет, психологии — с 15.
           </Notes>
         </Slide>
         {plan(1)}
+        <Slide bgColor="secondary">
+          <Image src={freud} fit />
+          <Notes>
+            Это Фрейд. Именно его чаще всего вспоминают, когда говорят о психологии.
+            С него начну рассказ и я. Фрейд многое дал психологии, его идеи дали мощный толчок клинической психологии и психиатрии. Сформулированный им подход к лечению — психоанализ — используется до сих пор.
+            И до сих пор, если психотерапевт видит что клиенту трудно говорить о эмоциях — он предложит клиенту прилечь, зная что это поможет.
+          </Notes>
+        </Slide>
+        <Slide bgColor="black" bgImage={newton} bgSize="contain" bgRepeat="no-repeat">
+          <Appear>
+            <ChushText textColor="red" caps>&nbsp;Нет</ChushText>
+          </Appear>
+          <Notes>
+            <p>
+              Однако, известность Фрейда играет злую шутку. Людям порой кажется что если бы не он — психологии бы не существовало.
+            </p>
+            <p>
+              Или что он открыл истинную правду и только на его догмах психология и стоит. Или что он давно устарел и вся психология вместе с ним.
+            </p>
+            <p>
+              Фрейд, конечно, не был пророком. Он не открыл истинную правду. Его методы не были научными. Многие предложенные им модели моделями и остаются, непроверенными и непроверяемыми. Есть даже подозрения что некоторые успешные кейсы он подделал.
+            </p>
+            <p>
+              Фрейд был сексистом, и, похоже, сам это понимал. Психоанализ, теория психосексуального развития — во многом это показывают.
+            </p>
+          </Notes>
+        </Slide>
+        <Slide>
+          <LText textColor="quaternary">
+            Прошлое →
+          </LText>
+          <LHeading size={2}>Наследие психоанализа</LHeading>
+          <br />
+          <br />
+          <LText>Герменевтика → Феноменология</LText>
+          <LText>Догматизм → Бихевиоризм и когнитивистика</LText>
+          <LText>??? → Экзистенциализм</LText>
+          <Notes>
+            <p>
+              Значительная часть психоанализа — герменевтика, поиск смыслов и причин. Каково истинное значение того сна? Занимаясь толкованиями, важно помнить что всегда есть тот кто толкует и то, что обуславливает это толкование. Кто он? Каким языком он пользуется?
+            </p>
+            <p>Альтернатива герменевтике — феноменология. Её язык — язык феноменов. Говорим о том, что точно есть, здесь и сейчас.</p>
+            <p>Фрейдовский психоанализ догматичен и наполнен придуманными моделями. Это подтолкнуло многих психологов к научному подходу.</p>
+            <p>Фрейд утилитарен. Его подход — встреча больного и пациента.</p>
+          </Notes>
+        </Slide>
+        <Slide>
+          <LText textColor="quaternary">
+            Прошлое →
+          </LText>
+          <LHeading size={4}>Психотерапевтические подходы</LHeading>
+          <br />
+          <LText>Психоанализ</LText>
+          <LText>Трансактный анализ</LText>
+          <LText>Когнитивно-поведенческая терапия</LText>
+          <LText>Семейная терапия</LText>
+          <LText>Гештальт-терапия</LText>
+          <LText>Экзистенциальная терапия</LText>
+          <LText>EMDR</LText>
+          <LText>Психодрама</LText>
+        </Slide>
+        <Slide>
+          <LText textColor="quaternary">
+            Прошлое →
+          </LText>
+          <LHeading size={4}>Психотерапевтические подходы</LHeading>
+          <br />
+          <LText>Психоанализ</LText>
+          <LText textColor="quaternary">Трансактный анализ</LText>
+          <LText>Когнитивно-поведенческая терапия</LText>
+          <LText textColor="quaternary">Семейная терапия</LText>
+          <LText>Гештальт-терапия</LText>
+          <LText textColor="quaternary">Экзистенциальная терапия</LText>
+          <LText textColor="quaternary">EMDR</LText>
+          <LText textColor="quaternary">Психодрама</LText>
+        </Slide>
+        {plan(2)}
 
         <Slide>
+          <LText textColor="quaternary">
+            Настоящее →
+          </LText>
           <LHeading size={2}>
-            Кто они?
+            Специалисты
           </LHeading>
           <br />
           <br />
@@ -156,7 +247,7 @@ export default class Presentation extends React.Component {
         </Slide>
         <Slide>
           <LText textColor="quaternary">
-            Кто они? →
+            Настоящее →
           </LText>
           <LHeading size={2}>
             Психолог
@@ -180,7 +271,7 @@ export default class Presentation extends React.Component {
         </Slide>
         <Slide>
           <LText textColor="quaternary">
-            Кто они? →
+            Настоящее →
           </LText>
           <LHeading size={2}>
             Психиатр
@@ -196,16 +287,16 @@ export default class Presentation extends React.Component {
           </LText>
           <CustomList>
             <ListItem>ставить диагноз</ListItem>
+            <ListItem>лечить психические расстройства</ListItem>
             <ListItem>стать психотерапевтом</ListItem>
           </CustomList>
-          <br />
           <br />
           <br />
           <br />
         </Slide>
         <Slide>
           <LText textColor="quaternary">
-            Кто они? →
+            Настоящее →
           </LText>
           <LHeading size={2}>
             Психотерапевт
@@ -226,9 +317,8 @@ export default class Presentation extends React.Component {
           <br />
           <br />
           <br />
-          <br />
         </Slide>
-        {plan(2)}
+        {plan(3)}
         <Slide bgImage={split}>
           <LHeading caps>Норм</LHeading>
           <br />
@@ -270,25 +360,42 @@ export default class Presentation extends React.Component {
           <br />
           <br />
         </Slide>
-        <Slide bgColor="secondary">
-          <Image src={freud} fit />
+        <Slide>
+          <LHeading size={2}>Итого</LHeading>
+          <CustomList>
+            <ListItem>важно отличать психолога от психотерапевта</ListItem>
+            <ListItem>вы не псих, но терапия может помочь</ListItem>
+            <ListItem>существуют разные взгляды и подходы</ListItem>
+            <ListItem>убедитесь, что у терапевта есть образование и&nbsp;супервизор</ListItem>
+          </CustomList>
         </Slide>
-        <Slide bgColor="black">
-          <Image src={newton} fit />
-          <br />
-          <br />
-          <br />
+        {plan(4)}
+        <Slide>
+          <LText textColor="quaternary">
+            {planList[4]} →
+          </LText>
+          <LHeading size={2}>Кто у нас тут?</LHeading>
           <br />
           <Appear>
-            <ChushText textColor="red" caps>&nbsp;&nbsp;&nbsp;Нет</ChushText>
+            <LText>93% — мужчины</LText>
+          </Appear>
+          <Appear>
+            <LText>75% — до 35 лет</LText>
+          </Appear>
+          <Appear>
+            <LText>10% — имеют расстройства личности</LText>
+          </Appear>
+          <Appear>
+            <LText>20% — имеют РЛ в США</LText>
           </Appear>
         </Slide>
-        <Slide bgColor="secondary" textColor="primary">
+
+        {/*<Slide bgColor="secondary" textColor="primary">
           <BlockQuote>
             <Quote>Example Quote</Quote>
             <Cite>Author</Cite>
           </BlockQuote>
-        </Slide>
+        </Slide>*/}
       </Deck>
     );
   }
