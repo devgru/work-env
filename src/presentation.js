@@ -212,6 +212,9 @@ export default class Presentation extends React.Component {
           <LText>Экзистенциальная терапия</LText>
           <LText>EMDR</LText>
           <LText>Психодрама</LText>
+          <Notes>
+            <p>Здесь — далеко не полный перечень психотерапевтических подходов, появившихся в 20 веке. Некоторые из них между собой похожи. Изучать их все жизни не хватит.</p>
+          </Notes>
         </Slide>
         <Slide>
           <LText textColor="quaternary">
@@ -227,6 +230,9 @@ export default class Presentation extends React.Component {
           <LText textColor="quaternary">Экзистенциальная терапия</LText>
           <LText textColor="quaternary">EMDR</LText>
           <LText textColor="quaternary">Психодрама</LText>
+          <Notes>
+            <p>Я пару слов скажу вот про эти подходы. Я сам гештальтист, поэтому начну с других.</p>
+          </Notes>
         </Slide>
         {plan(2)}
 
