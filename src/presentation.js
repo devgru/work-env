@@ -166,6 +166,7 @@ export default class Presentation extends React.Component {
         theme={theme}
       >
         <Slide bgColor="primary">
+          <LText textColor="quaternary">&nbsp;</LText>
           <LHeading size={1} textColor="secondary">
             Психология
           </LHeading>
@@ -180,6 +181,7 @@ export default class Presentation extends React.Component {
           <LText textColor="quaternary" size={1}>
             октябрь 2018, 404 Fest
           </LText>
+          <SPAN />
         </Slide>
         {plan(-1)}
         {plan(0)}
@@ -585,6 +587,7 @@ export default class Presentation extends React.Component {
           <LHeading size={5}>Работа с травмой</LHeading>
           <br />
           <Image width="100%" src={skeletons} />
+          <SPAN />
         </Slide>
         <Slide bgColor="secondary">
           <Text fit caps textColor="primary">Я узнаю свой тип</Text>
@@ -723,8 +726,8 @@ export default class Presentation extends React.Component {
           <LHeading size={2}>Ещё бонусы айти</LHeading>
           <br />
           <CustomList>
-            <AListItem>возможность гибкого графика;</AListItem>
-            <AListItem>возможность удалённой работы;</AListItem>
+            <AListItem>возможен гибкий график;</AListItem>
+            <AListItem>возможна удалённая работа;</AListItem>
             <AListItem>возможен быстрый карьерный рост;</AListItem>
             <AListItem>работы много;</AListItem>
             <AListItem>«мозговая работа»;</AListItem>
@@ -745,7 +748,6 @@ export default class Presentation extends React.Component {
           </CustomList>
           <SPAN />
         </Slide>
-
         <Slide bgColor="red">
           <Text caps fit textColor="primary">Всё</Text>
         </Slide>
