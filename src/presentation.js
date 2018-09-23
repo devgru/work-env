@@ -22,30 +22,54 @@ import {
 
 // Import images
 import createTheme from 'spectacle/lib/themes/default';
-import logos from './images/logos.png';
 import dl from './images/dl-logo.svg';
 import exante from './images/exante.jpg';
 import pleeco from './images/pleeco-logo-open.svg';
-import itp from './images/itp.png';
 import split from './images/split.svg';
 import levels from './images/levels.svg';
 import newton from './images/newton.jpg';
 import freud from './images/freud.jpg';
 import eap from './images/eap.gif';
 import me from './images/me.jpg';
-import bezCeli from './images/bez-celi.jpg';
 import skeletons from './images/skeletons.jpg';
 import paei from './images/paei.jpg';
 import bigFive from './images/big-five.png';
+import anxietyTech from './images/anxiety-tech.png';
+import nikita from './images/nikita.png';
+import maslow from './images/maslow.jpg';
+import shutov from './images/shutov.png';
+import pyramid from './images/maslow-pyramid.gif';
+import annas from './images/annas.png';
+import talks from './images/talks.png';
+import nancy from './images/nancy2.jpeg';
+import korol from './images/korol.png';
+import alter from './images/alter.png';
+import breeze from './images/breeze.png';
+import yasno from './images/yasno.svg';
+import kraynov from './images/kraynov.jpg';
 
 const LHeading = styled(Heading)`
   text-align: left;
+`;
+const LLHeading = styled(Heading)`
+  text-align: left;
+  float: left;
+  clear: both;
+  margin: 0 -10px;
+  padding: 10px;
 `;
 const RHeading = styled(Heading)`
   text-align: right;
 `;
 const LText = styled(Text)`
   text-align: left;
+`;
+const LLText = styled(Text)`
+  text-align: left;
+  float: left;
+  clear: both;
+  margin: -10px -10px 0;
+  padding: 10px;
 `;
 const RText = styled(Text)`
   text-align: right;
@@ -124,10 +148,12 @@ const theme = createTheme(
 );
 
 const planList = [
+  'Дисклеймер',
+  'Вдохновение',
   'О себе',
-  'Прошлое',
-  'Настоящее',
+  'Ликбез',
   'Заблуждения',
+  'Фон',
   'Специфика',
   'Гигиена',
 ];
@@ -157,10 +183,13 @@ const plan = (index) => (
 
 export default class Presentation extends React.Component {
   render() {
+
+    let planStep = -1;
+
     return (
       <Deck
-        contentWidth="1000"
-        contentHeight="750"
+        contentWidth={1000}
+        contentHeight={750}
         transition={[]}
         transitionDuration={500}
         theme={theme}
@@ -181,10 +210,100 @@ export default class Presentation extends React.Component {
           <LText textColor="quaternary" size={1}>
             октябрь 2018, 404 Fest
           </LText>
+          <Appear>
+            <ChushText textColor="red" caps>Ψ→IT</ChushText>
+          </Appear>
           <SPAN />
         </Slide>
-        {plan(-1)}
-        {plan(0)}
+        {plan(planStep++)}
+        {plan(planStep++)}
+        <Slide>
+          <LText textColor="quaternary">
+            &nbsp;
+          </LText>
+          <LHeading size={3}>Дисклеймер</LHeading>
+          <br />
+          <CustomList>
+            <AListItem>сборная солянка;</AListItem>
+            <AListItem>субъективность;</AListItem>
+            <AListItem>самокритичность;</AListItem>
+            <AListItem>шуточки;</AListItem>
+          </CustomList>
+          <SPAN />
+        </Slide>
+        {plan(planStep++)}
+        <Slide>
+          <LText textColor="quaternary">
+            Вдохновение →
+          </LText>
+          <LHeading size={4}>Истории депрессии и выгорания</LHeading>
+          <LImage width="100%" src={nikita} />
+          <SPAN />
+        </Slide>
+        <Slide>
+          <LText textColor="quaternary">
+            Вдохновение →
+          </LText>
+          <LHeading size={4}>Истории депрессии и выгорания</LHeading>
+          <LImage width="100%" src={annas} />
+          <SPAN />
+        </Slide>
+        <Slide>
+          <LText textColor="quaternary">
+            Вдохновение →
+          </LText>
+          <LHeading size={4}>Выступления о выгорании</LHeading>
+          <LImage width="100%" src={talks} />
+          <SPAN />
+          <Notes>
+            Ссылки
+            https://youtu.be/K6oZuB8_dU8
+            https://youtu.be/G5_pR0GLQmE
+
+          </Notes>
+        </Slide>
+        <Slide>
+          <LText textColor="quaternary">
+            Вдохновение →
+          </LText>
+          <LHeading size={3}>Anxiety tech</LHeading>
+          <Image width="100%" src={anxietyTech} />
+          <SPAN />
+        </Slide>
+        <Slide>
+          <LText textColor="quaternary">
+            Вдохновение →
+          </LText>
+          <LHeading size={3}>Велосипед</LHeading>
+          <LImage width="80%" src={shutov} />
+          <SPAN />
+        </Slide>
+        <Slide>
+          <LText textColor="quaternary">
+            Вдохновение →
+          </LText>
+          <LHeading size={3}>Сергей Король</LHeading>
+          <LImage width="80%" src={korol} />
+          <SPAN />
+        </Slide>
+        <Slide>
+          <LText textColor="quaternary">
+            Вдохновение →
+          </LText>
+          <LHeading size={3}>Developer survey</LHeading>
+          <br />
+          <CustomList>
+            <AListItem>93% — мужчины;</AListItem>
+            <AListItem>75% — до 35 лет;</AListItem>
+            <AListItem>11,5% — сообщают о РЛ;</AListItem>
+            <AListItem>20% — жителей США имеют депрессию и/или тревогу.</AListItem>
+          </CustomList>
+          <br />
+          <RText textColor="quaternary">Stack Overflow Developer survey, 2018</RText>
+          <RText textColor="quaternary">insights.stackoverflow.com/survey/2018</RText>
+          <SPAN />
+        </Slide>
+        {plan(planStep++)}
         <Slide>
           <LText textColor="quaternary">О себе →</LText>
           <LHeading size={2}>Веб-разработчик</LHeading>
@@ -217,23 +336,182 @@ export default class Presentation extends React.Component {
             <p>Это не единственный мой опыт в психологии, конечно. Я учился, читал книги, посещал тренинги, учился их вести, придумывал и вёл свои.</p>
             <p>Называть себя психотерапевтом я формально не могу и подробнее ещё расскажу про это, но сегодня важно не это.</p>
             <p>Я планирую поделиться с вами выжимкой той информации, которую собрал за годы интереса к предмету, в надежде что это будет вам полезно.</p>
+            <p>Интерес и был тем, что подталкивало меня. Учёба небесплатная — я потратил деньги, время, усилия.</p>
+            <p>Но я доволен своим опытом и одна из вещей которой я доволен отдельно — возможность применять навыки одной профессии в другой.</p>
+          </Notes>
+        </Slide>
+        {plan(planStep++)}
+        <Slide>
+          <LText textColor="quaternary">
+            Ликбез →
+          </LText>
+          <LHeading size={2}>
+            Специалисты
+          </LHeading>
+          <br />
+          <br />
+          <br />
+          <Text fit caps textColor="tertiary">
+            <span>Психолог</span>
+            <S type="" textColor="primary">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</S>
+            <span>Психиатр</span>
+          </Text>
+          <br />
+          <br />
+          <br />
+          <Text fit caps textColor="tertiary">
+            <S type="" textColor="primary">&nbsp;&nbsp;&nbsp;&nbsp;</S>
+            <span>Психотерапевт</span>
+            <S type="" textColor="primary">&nbsp;&nbsp;&nbsp;&nbsp;</S>
+          </Text>
+          <SPAN />
+          <Notes>
+            <p>Как и другие области знания, психология сильно развилась за последний век. К сожалению, популяризация не поспевает.</p>
+            <p>Самым важным провалом мне кажется непонимание различия профессий. Оно не сложное, но там есть нюансы.</p>
+            <p>Представьте, вы бы боялись вообще всех врачей, ведь слышали когда-то что врачи режут людей. Такое происходит и с психологическими профессиями.</p>
+            <p>Я расскажу вот про эти три, если вы будете различать их — этого по большей части достаточно.</p>
           </Notes>
         </Slide>
         <Slide>
-          <Image width="100%" src={itp} />
+          <LText textColor="quaternary">
+            Ликбез →
+          </LText>
+          <LHeading size={2}>
+            Психолог
+          </LHeading>
+          <br />
+          <LText>
+            Высшее образование в психологии
+          </LText>
+          <br />
+          <LText>
+            Может:
+          </LText>
+          <CustomList>
+            <ListItem>консультировать;</ListItem>
+            <ListItem>вести исследования;</ListItem>
+            <ListItem>быть HR;</ListItem>
+            <ListItem>создавать и вести тренинги;</ListItem>
+            <ListItem>учить, преподавать, воспитывать.</ListItem>
+          </CustomList>
+          <SPAN />
           <Notes>
-            <p>Интерес и был тем, что подталкивало меня. Учёба небесплатная — я потратил деньги, время, усилия.</p>
-            <p>Но я доволен своим опытом и одна из вещей которой я доволен отдельно — возможность применять навыки одной профессии в другой.</p>
-            <p>На слайде — метафоры, которые используются для описания таких ситуаций.</p>
-            <p>Эти формы используются для описания развития навыков.</p>
-            <p>I — лишь один развитый навык. Думаю, так не бывает.</p>
-            <p>Форму T хорошо описывает valve handbook. Дополнительные навыки помогают в основном. Мне кажется, в программировании это частая картина.</p>
-            <p>Π — два навыка, развитые в сравнимой степени.</p>
+            <p>Психолог — человек с высшим психологическим образованием.</p>
+            <p>Он может исполнять разные роли, часть из них перечислена здесь.</p>
+            <p>Обратите внимание, «психотерапии» здесь нет. Психолог не лечит, он работает со здоровыми людьми. Однако, психологи часто идут учиться на психотерпевтов.</p>
+            <p>Такую связку навыков я считаю оптимальной, знаю ребят и девушек с таким образованием и такое сочетание хорошо дополняет друг друга.</p>
+            <p>Кроме того, даже если специалист молодой, такая связка позволяет чувствовать себя уверенно, а это довольно важно.</p>
           </Notes>
         </Slide>
-        {plan(1)}
-        <Slide bgColor="secondary">
-          <Image src={freud} fit />
+        <Slide>
+          <LText textColor="quaternary">
+            Ликбез →
+          </LText>
+          <LHeading size={2}>
+            Психиатр
+          </LHeading>
+          <br />
+          <LText>
+            Врач, высшее образование в психиатрии
+          </LText>
+          <br />
+          <LText>
+            Может:
+          </LText>
+          <CustomList>
+            <ListItem>диагностировать личностные растройства;</ListItem>
+            <ListItem>лечить личностные расстройства;</ListItem>
+            <ListItem>использовать фарму.</ListItem>
+          </CustomList>
+          <SPAN />
+          <Notes>
+            <p>Психиатр — врач. 8 лет учёбы — и вы тоже можете таким стать.</p>
+            <p>Психиатр может стать психотерапевтом, пройдя обучение.</p>
+            <p>Этот сценарий в России — единственный формально правильный. Официально называть себя психотерапевтом сейчас может только врач-психотерапевт.</p>
+            <p>Поэтому я, например, психотерапевтом себя не называю.</p>
+            <p>Тем не менее, у этого сценария есть подводные камни.</p>
+            <p>Врачи часто получают психотерапевтическую квалификацию «для галочки», имея возможность заработать на этом.</p>
+            <p>Врачу-психиатру, решившему стать психотерапевтом будет труднее чем психологу: этика психиатра и психотерапевта сильно отличаются, может быть трудно переключать контексты.</p>
+            <p>Кроме того, врач-психиатр может иметь взгляды на спорные темы не совместимые с вашими. Например, может рассматривать ЛГБТ как психическую проблему а не особенность.</p>
+          </Notes>
+        </Slide>
+        <Slide>
+          <LText textColor="quaternary">
+            Ликбез →
+          </LText>
+          <LHeading size={2}>
+            Психотерапевт
+          </LHeading>
+          <br />
+          <LText>
+            Всё сложно
+          </LText>
+          <br />
+          <LText>
+            Может:
+          </LText>
+          <CustomList>
+            <ListItem>заниматься психотерапией;</ListItem>
+            <ListItem>вести психотерапевтические группы.</ListItem>
+          </CustomList>
+          <SPAN />
+          <Notes>
+            <p>Помимо того, что уже сказано про психотерапевтов, подведу некоторый итог.</p>
+            <p>Психотерапия — отдельный вид деятельности.</p>
+            <p>В Европе с 1990 действует «страсбургская декларация о психотерапии», описывающая психотерапию как отдельную профессию, требующую практической и теоретической подготовки.</p>
+            <p>В России сейчас это по сути врачебная специальность, однако существует законопроект, который должен открыть возможность становиться психотерапевтами представителям других профессий, например соцработникам.</p>
+          </Notes>
+        </Slide>
+        <Slide>
+          <LText textColor="quaternary">
+            Ликбез →
+          </LText>
+          <LHeading size={4}>Психотерапевтические подходы</LHeading>
+          <br />
+          <LText>Психоанализ</LText>
+          <LText>Трансактный анализ</LText>
+          <LText>Когнитивно-поведенческая терапия</LText>
+          <LText>Семейная терапия</LText>
+          <LText>Гештальт-терапия</LText>
+          <LText>Экзистенциальная терапия</LText>
+          <LText>EMDR</LText>
+          <LText>Психодрама</LText>
+          <Notes>
+            <p>Здесь — далеко не полный перечень психотерапевтических подходов, появившихся в 20 веке. Некоторые из них между собой похожи. Изучать их все жизни не хватит.</p>
+            <p>На самом деле среди подходов часто встречаются родственные.</p>
+            <p>Почти любой вид терапии так или иначе наследует психоанализу, использует часть его понятий и инструментов</p>
+            <p>А семейная терапия, например, может по сути быть обычной терапией в одном из подходов, адаптированном для работы с группой людей.</p>
+          </Notes>
+          <SPAN />
+        </Slide>
+        <Slide>
+          <LText textColor="quaternary">
+            Ликбез →
+          </LText>
+          <LHeading size={4}>Психотерапевтические подходы</LHeading>
+          <br />
+          <LText>Психоанализ</LText>
+          <LText textColor="quaternary">Трансактный анализ</LText>
+          <LText>Когнитивно-поведенческая терапия</LText>
+          <LText textColor="quaternary">Семейная терапия</LText>
+          <LText>Гештальт-терапия</LText>
+          <LText textColor="quaternary">Экзистенциальная терапия</LText>
+          <LText textColor="quaternary">EMDR</LText>
+          <LText textColor="quaternary">Психодрама</LText>
+          <Notes>
+            <p>Я пару слов скажу вот про эти подходы. Я сам гештальтист, поэтому начну с других.</p>
+            <p>Психоанализ за век заметно изменился. Его адаптировали к групповой работе, многие аналитики работают безо всяких кушеток, с прямым контактом с клиентом, принимают куда более активное участие в работе. Появилась целая группа вариаций, их иногда ещё называют психодинамическими терапиями. Эрик Берн с его транзактным анализом.</p>
+            <p>Большую популярность сыскала когнитивно-поведенческая терапия, опирающаяся на научный подход и имеющая доказанную эффективность. Слышал о том, что в некоторых странах Европы по страховке могут назначить именно КПТ, в том числе при психосоматике.</p>
+            <p>И, наконец, экзистенциальный подход и гештальт. Если вы читали книги Ирвина Ялома — вы представляете, как выглядит экзистенциальная психотерапия. Гештальт со стороны на неё в значительной степени похож. Такая терапия менее утилитарна, она призывает клиента работать с тем что важно здесь и сейчас, используя разговор и различные эксперименты, из самых известных — пустой стул.</p>
+          </Notes>
+          <SPAN />
+        </Slide>
+        <Slide bgColor="secondary" bgImage={freud} bgSize="contain" bgRepeat="no-repeat">
+          <LLText textColor="quaternary" bgColor="primary">Ликбез →</LLText>
+          <Appear>
+            <LLHeading size={2} bgColor="primary">Фрейд</LLHeading>
+          </Appear>
+          <SPAN />
           <Notes>
             <p>Это Фрейд. Именно его чаще всего вспоминают, когда говорят о психологии.</p>
             <p>С него начну рассказ и я. Фрейд многое дал психологии, его идеи дали мощный толчок клинической психологии и психиатрии. Сформулированный им подход к лечению — психоанализ — используется до сих пор.</p>
@@ -261,7 +539,7 @@ export default class Presentation extends React.Component {
         </Slide>
         <Slide>
           <LText textColor="quaternary">
-            Прошлое →
+            Ликбез →
           </LText>
           <LHeading size={2}>Наследие психоанализа</LHeading>
           <br />
@@ -280,165 +558,31 @@ export default class Presentation extends React.Component {
             <p>Фрейд утилитарен. Его подход — встреча больного и пациента, ради излечения конкретных проблем. Иногда это слишком поверхностно, а работать хочется глубже. Хочется развития а не лечения. Тогда нас интересует экзистенциализм. Экзистенциальная встреча — гораздо более равная чем психоаналитическая.</p>
           </Notes>
         </Slide>
-        {plan(2)}
-        <Slide>
-          <LText textColor="quaternary">
-            Настоящее →
-          </LText>
-          <LHeading size={2}>
-            Специалисты
-          </LHeading>
-          <br />
-          <CustomList>
-            <ListItem>Психолог</ListItem>
-            <ListItem>Психотерапевт</ListItem>
-            <ListItem>Психиатр</ListItem>
-          </CustomList>
+        <Slide bgImage={maslow} bgSize="contain" bgRepeat="no-repeat" bgPosition="right">
+          <LLText textColor="quaternary" bgColor="primary">Ликбез →</LLText>
+          <Appear>
+            <LLHeading size={2} bgColor="primary">Абрахам<br />Маслоу</LLHeading>
+          </Appear>
           <SPAN />
           <Notes>
-            <p>Как и другие области знания, психология сильно развилась за последний век. К сожалению, популяризация не поспевает.</p>
-            <p>Самым важным провалом мне кажется непонимание различия профессий. Оно не сложное, но там есть нюансы.</p>
-            <p>Представьте, вы бы боялись вообще всех врачей, ведь слышали когда-то что врачи режут людей. Такое происходит и с психологическими профессиями.</p>
-            <p>Я расскажу вот про эти три, если вы будете различать их — этого по большей части достаточно.</p>
+            <p>Это Абрахам Маслоу. Его вы скорее всего знаете как автора «пирамиды потребностей».</p>
+          </Notes>
+        </Slide>
+        <Slide bgImage={pyramid} bgSize="contain" bgRepeat="no-repeat">
+        </Slide>
+        <Slide bgImage={nancy} bgSize="contain" bgRepeat="no-repeat">
+          <LLText textColor="quaternary" bgColor="primary">Ликбез →</LLText>
+          <Appear>
+            <LLHeading size={2} bgColor="primary">Нэнси<br />МакВильямс</LLHeading>
+          </Appear>
+          <SPAN />
+          <Notes>
+            <p></p>
           </Notes>
         </Slide>
         <Slide>
           <LText textColor="quaternary">
-            Настоящее →
-          </LText>
-          <LHeading size={2}>
-            Психолог
-          </LHeading>
-          <br />
-          <LText>
-            Высшее психологическое образование
-          </LText>
-          <br />
-          <LText>
-            Может:
-          </LText>
-          <CustomList>
-            <ListItem>консультировать;</ListItem>
-            <ListItem>вести исследования;</ListItem>
-            <ListItem>быть HR;</ListItem>
-            <ListItem>создавать и вести тренинги;</ListItem>
-            <ListItem>учить, преподавать, воспитывать.</ListItem>
-          </CustomList>
-          <SPAN />
-          <Notes>
-            <p>Психолог — человек с высшим психологическим образованием.</p>
-            <p>Он может исполнять разные роли, часть из них перечислена здесь.</p>
-            <p>Обратите внимание, «психотерапии» здесь нет. Психолог не лечит, он работает со здоровыми людьми. Однако, психологи часто идут учиться на психотерпевтов.</p>
-            <p>Такую связку навыков я считаю оптимальной, знаю ребят и девушек с таким образованием и такое сочетание хорошо дополняет друг друга.</p>
-            <p>Кроме того, даже если специалист молодой, такая связка позволяет чувствовать себя уверенно, а это довольно важно.</p>
-          </Notes>
-        </Slide>
-        <Slide>
-          <LText textColor="quaternary">
-            Настоящее →
-          </LText>
-          <LHeading size={2}>
-            Психиатр
-          </LHeading>
-          <br />
-          <LText>
-            Врач
-          </LText>
-          <br />
-          <LText>
-            Может:
-          </LText>
-          <CustomList>
-            <ListItem>диагностировать личностные растройства;</ListItem>
-            <ListItem>лечить личностные расстройства;</ListItem>
-            <ListItem>использовать фарму.</ListItem>
-          </CustomList>
-          <SPAN />
-          <Notes>
-            <p>Психиатр — врач. 8 лет учёбы — и вы тоже можете таким стать.</p>
-            <p>Психиатр может стать психотерапевтом, пройдя обучение.</p>
-            <p>Этот сценарий в России — единственный формально правильный. Официально называть себя психотерапевтом сейчас может только врач-психотерапевт.</p>
-            <p>Поэтому я, например, психотерапевтом себя не называю.</p>
-            <p>Тем не менее, у этого сценария есть подводные камни.</p>
-            <p>Врачи часто получают психотерапевтическую квалификацию «для галочки», имея возможность заработать на этом.</p>
-            <p>Врачу-психиатру, решившему стать психотерапевтом будет труднее чем психологу: этика психиатра и психотерапевта сильно отличаются, может быть трудно переключать контексты.</p>
-            <p>Кроме того, врач-психиатр может иметь взгляды на спорные темы не совместимые с вашими. Например, может рассматривать ЛГБТ как психическую проблему а не особенность.</p>
-          </Notes>
-        </Slide>
-        <Slide>
-          <LText textColor="quaternary">
-            Настоящее →
-          </LText>
-          <LHeading size={2}>
-            Психотерапевт
-          </LHeading>
-          <br />
-          <LText>
-            ???
-          </LText>
-          <br />
-          <LText>
-            Может:
-          </LText>
-          <CustomList>
-            <ListItem>заниматься психотерапией;</ListItem>
-            <ListItem>вести психотерапевтические группы.</ListItem>
-          </CustomList>
-          <SPAN />
-          <Notes>
-            <p>Помимо того, что уже сказано про психотерапевтов, подведу некоторый итог.</p>
-            <p>Психотерапия — отдельный вид деятельности.</p>
-            <p>В Европе с 1990 действует «страсбургская декларация о психотерапии», описывающая психотерапию как отдельную профессию, требующую практической и теоретической подготовки.</p>
-            <p>В России сейчас это по сути врачебная специальность, однако существует законопроект, который должен открыть возможность становиться психотерапевтами представителям других профессий, например соцработникам.</p>
-          </Notes>
-        </Slide>
-        <Slide>
-          <LText textColor="quaternary">
-            Настоящее →
-          </LText>
-          <LHeading size={4}>Психотерапевтические подходы</LHeading>
-          <br />
-          <LText>Психоанализ</LText>
-          <LText>Трансактный анализ</LText>
-          <LText>Когнитивно-поведенческая терапия</LText>
-          <LText>Семейная терапия</LText>
-          <LText>Гештальт-терапия</LText>
-          <LText>Экзистенциальная терапия</LText>
-          <LText>EMDR</LText>
-          <LText>Психодрама</LText>
-          <Notes>
-            <p>Здесь — далеко не полный перечень психотерапевтических подходов, появившихся в 20 веке. Некоторые из них между собой похожи. Изучать их все жизни не хватит.</p>
-            <p>На самом деле среди подходов часто встречаются родственные.</p>
-            <p>Почти любой вид терапии так или иначе наследует психоанализу, использует часть его понятий и инструментов</p>
-            <p>А семейная терапия, например, может по сути быть обычной терапией в одном из подходов, адаптированном для работы с группой людей.</p>
-          </Notes>
-          <SPAN />
-        </Slide>
-        <Slide>
-          <LText textColor="quaternary">
-            Настоящее →
-          </LText>
-          <LHeading size={4}>Психотерапевтические подходы</LHeading>
-          <br />
-          <LText>Психоанализ</LText>
-          <LText textColor="quaternary">Трансактный анализ</LText>
-          <LText>Когнитивно-поведенческая терапия</LText>
-          <LText textColor="quaternary">Семейная терапия</LText>
-          <LText>Гештальт-терапия</LText>
-          <LText textColor="quaternary">Экзистенциальная терапия</LText>
-          <LText textColor="quaternary">EMDR</LText>
-          <LText textColor="quaternary">Психодрама</LText>
-          <Notes>
-            <p>Я пару слов скажу вот про эти подходы. Я сам гештальтист, поэтому начну с других.</p>
-            <p>Психоанализ за век заметно изменился. Его адаптировали к групповой работе, многие аналитики работают безо всяких кушеток, с прямым контактом с клиентом, принимают куда более активное участие в работе. Появилась целая группа вариаций, их иногда ещё называют психодинамическими терапиями. Эрик Берн с его транзактным анализом.</p>
-            <p>Большую популярность сыскала когнитивно-поведенческая терапия, опирающаяся на научный подход и имеющая доказанную эффективность. Слышал о том, что в некоторых странах Европы по страховке могут назначить именно КПТ, в том числе при психосоматике.</p>
-            <p>И, наконец, экзистенциальный подход и гештальт. Если вы читали книги Ирвина Ялома — вы представляете, как выглядит экзистенциальная психотерапия. Гештальт со стороны на неё в значительной степени похож. Такая терапия менее утилитарна, она призывает клиента работать с тем что важно здесь и сейчас, используя разговор и различные эксперименты, из самых известных — пустой стул.</p>
-          </Notes>
-          <SPAN />
-        </Slide>
-        <Slide>
-          <LText textColor="quaternary">
-            Настоящее →
+            Ликбез →
           </LText>
           <LHeading size={4}>Европейская ассоциация психотерапии</LHeading>
           <br />
@@ -451,7 +595,58 @@ export default class Presentation extends React.Component {
             <p>А эта ссылка ведёт на поисковик по терапевтам. В России всего 250 терапевтов, имеющих сертификат EAP.</p>
           </Notes>
         </Slide>
-        {plan(3)}
+        <Slide>
+          <LText textColor="quaternary">
+            Ликбез →
+          </LText>
+          <LHeading size={4}>Современные проекты</LHeading>
+          <br />
+          <br />
+          <br />
+          <Heading size={1}>B17.RU</Heading>
+          <SPAN />
+          <Notes>
+          </Notes>
+        </Slide>
+        <Slide>
+          <LText textColor="quaternary">
+            Ликбез →
+          </LText>
+          <LHeading size={4}>Современные проекты</LHeading>
+          <br />
+          <Image width="100%" src={alter} />
+          <Text>psyalter.ru</Text>
+          <SPAN />
+          <Notes>
+          </Notes>
+        </Slide>
+        <Slide>
+          <LText textColor="quaternary">
+            Ликбез →
+          </LText>
+          <LHeading size={4}>Современные проекты</LHeading>
+          <br />
+          <br />
+          <Image width="100%" src={breeze} />
+          <br />
+          <Text>breeze.live</Text>
+          <SPAN />
+          <Notes>
+          </Notes>
+        </Slide>
+        <Slide>
+          <LText textColor="quaternary">
+            Ликбез →
+          </LText>
+          <LHeading size={4}>Современные проекты</LHeading>
+          <br />
+          <Image width="80%" src={yasno} />
+          <Text>yasno.live</Text>
+          <SPAN />
+          <Notes>
+          </Notes>
+        </Slide>
+        {plan(planStep++)}
         <Slide bgImage={split}>
           <LHeading caps>Норм</LHeading>
           <br />
@@ -494,7 +689,7 @@ export default class Presentation extends React.Component {
           <Text>Невротик</Text>
           <br />
           <br />
-          <Text textColor="primary">Пограничник</Text>
+          <Text textColor="primary">Пограничный уровень</Text>
           <br />
           <br />
           <Text textColor="primary">Психотик</Text>
@@ -505,7 +700,7 @@ export default class Presentation extends React.Component {
             <p>А вот этой шкалой пользуются гештальтисты.</p>
             <p>Для понимания: невротик — человек, имеющий внутренние конфликты. В общем — нормальное состояние жителя города, общающегося с другими, активно решающего творческие задачи, сталкивающегося с ежедневными конфликтами.</p>
             <p>Психоз — состояние, когда человек не отличает, что реально а что нет. Это к психиатру.</p>
-            <p>Пограничное расстройство — посередине. С одной стороны внешне это чаще здоровые люди, их не так легко отличить как психотиков. Чаще возникает у женщин, характеризуется эмоциональной нестабильностью, повышенным риском суицида, чаще сопровождается другими расстройствами. Иногда — алкоголизм, промискуитети другое т.н. «повреждающее поведение».</p>
+            <p>Пограничный уровень — посередине. С одной стороны внешне это чаще здоровые люди, их не так легко отличить как психотиков. Чаще возникает у женщин, характеризуется эмоциональной нестабильностью, повышенным риском суицида, чаще сопровождается другими расстройствами. Иногда — алкоголизм, промискуитети другое т.н. «повреждающее поведение».</p>
           </Notes>
         </Slide>
         <Slide bgColor="secondary">
@@ -528,6 +723,20 @@ export default class Presentation extends React.Component {
           </Appear>
           <Appear>
             <SecondaryCT textColor="red" caps>НЕТ</SecondaryCT>
+          </Appear>
+          <Notes>
+            <p>Тоже очень популярная штука. Качественная диагностика требует времени, этим всё сказано.</p>
+            <p>Опытный специалист может различать знакомые ему наборы черт и строить гипотезы, но их важно проверять.</p>
+            <p>Разумеется, если человек работает, например, в ПНД и знает что к нему без серьёзных проблем не приходят — задача несколько упрощается, в диагностике поможет сам пациент.</p>
+          </Notes>
+        </Slide>
+        <Slide bgColor="secondary">
+          <Text fit caps textColor="primary">У этого психотерапевта</Text>
+          <br />
+          <Text fit caps textColor="tertiary">есть свой психотерапевт</Text>
+          <br />
+          <Appear>
+            <Text fit caps textColor="green">как он может мне помочь?</Text>
           </Appear>
           <Notes>
             <p>Тоже очень популярная штука. Качественная диагностика требует времени, этим всё сказано.</p>
@@ -590,6 +799,23 @@ export default class Presentation extends React.Component {
           <SPAN />
         </Slide>
         <Slide bgColor="secondary">
+          <Text fit caps textColor="primary">Психотерапевт всегда</Text>
+          <br />
+          <Text fit caps textColor="tertiary">
+            <Appear><span>доволен жизнью</span></Appear>
+            <Appear><S type="" textColor="green">счастлив</S></Appear>
+            <Appear><span>успешен</span></Appear>
+          </Text>
+          <br />
+          <Text fit caps textColor="tertiary">
+            <Appear><span>в браке</span></Appear>
+            <Appear><S type="" textColor="green">в хорошем настроении</S></Appear>
+          </Text>
+          <Appear>
+            <SecondaryCT textColor="red" caps>УВЫ</SecondaryCT>
+          </Appear>
+        </Slide>
+        <Slide bgColor="secondary">
           <Text fit caps textColor="primary">Я узнаю свой тип</Text>
           <br />
           <Appear>
@@ -650,33 +876,50 @@ export default class Presentation extends React.Component {
           </CustomList>
           <SPAN />
         </Slide>
-        {plan(4)}
+        {plan(planStep++)}
         <Slide>
           <LText textColor="quaternary">
-            {planList[4]} →
+            Фон →
           </LText>
-          <LHeading size={2}>Кто у нас тут?</LHeading>
+          <LHeading size={2}>Непростое прошлое</LHeading>
           <br />
-          <Appear>
-            <LText>93% — мужчины</LText>
-          </Appear>
-          <Appear>
-            <LText>75% — до 35 лет</LText>
-          </Appear>
-          <Appear>
-            <LText>11,5% — сообщают о РЛ</LText>
-          </Appear>
-          <Appear>
-            <LText>20% — сообщают о РЛ в США</LText>
-          </Appear>
-          <br />
-          <RText textColor="quaternary">Stack Overflow Developer survey, 2018</RText>
-          <RText textColor="quaternary">insights.stackoverflow.com/survey/2018</RText>
+          <CustomList>
+            <AListItem>габитус бедности: postnauka.ru/video/65819;</AListItem>
+            <AListItem>культура подвига;</AListItem>
+            <AListItem>оценочность;</AListItem>
+            <AListItem>обусловенность принятия как норма;</AListItem>
+            <AListItem>«стокгольмский синдром».</AListItem>
+          </CustomList>
           <SPAN />
+          <Notes>
+            <p>В нашей стране покупательская способность ниже чем в США в 2 раза, на момент развала СССР — в три.</p>
+            <p>Жизнь в бедности влияет на людей, об этом хорошо рассказали на ПостНауке: <a href="https://postnauka.ru/video/65819">видео</a></p>
+            <p>Страна прошла через две войны и цепочку революций, одно из последствий — то, что Людмила Петрановская обозвала «травмой поколений». Мне кажется важным такой её аспект: подвиг становится нормой. Игнорирование собственных потребностей, сверхценность потребностей компании, сверхлояльность — такие вещи  становятся нормой. И тянут к выгоранию.</p>
+            <p><a href="https://www.youtube.com/watch?v=T0YPNjRI7Qc">видео</a>, <a href="https://www.pravmir.ru/lyudmila-petranovskaya-ofitsioznoe-otnoshenie-k-voyne-prestuplenie-pered-psihologicheskim-blagopoluchiem-natsii/">Короткая версия</a>, Оригинальные заметки: <a href="https://ludmilapsyholog.livejournal.com/52399.html">часть 1</a>, <a href="https://ludmilapsyholog.livejournal.com/52649.html">часть 2</a>, <a href="https://ludmilapsyholog.livejournal.com/53022.html">часть 3</a>, <a href="https://ludmilapsyholog.livejournal.com/53418.html">часть 4</a>, <a href="https://ludmilapsyholog.livejournal.com/53949.html">часть 5</a>, <a href="https://ludmilapsyholog.livejournal.com/54193.html">часть 6</a>.
+            </p>
+            <p>Мы с вами рождены в культуре, где норма — искуственная оценка. Проверка соответствия требованиям, не имеющим отношения к реальности. Внешний вид, оценки в школе, поведение.</p>
+            <p>Такие вещи часто переживаются детьми как непринятие их самих, ребёнок понимает что принятие родителем — обусловено и подстраивается под это обстоятельство.</p>
+            <p>Одна из вещей которые мешают нам замечать эти проблемы — СС, нормальная на самом деле реакция психики по оправданию более властных фигур.</p>
+          </Notes>
         </Slide>
         <Slide>
           <LText textColor="quaternary">
-            {planList[4]} →
+            Фон →
+          </LText>
+          <LHeading size={2}>Обнадёживающее настоящее</LHeading>
+          <br />
+          <CustomList>
+            <AListItem>растёт благосостояние и обеспеченность жильём;</AListItem>
+            <AListItem>интернет даёт доступ к информации;</AListItem>
+            <AListItem>психологическая помощь становится популярнее;</AListItem>
+            <AListItem>состояние рынка труда подталкивает компании заботиться о сотрудниках..</AListItem>
+          </CustomList>
+          <SPAN />
+        </Slide>
+        {plan(planStep++)}
+        <Slide>
+          <LText textColor="quaternary">
+            Специфика →
           </LText>
           <LHeading size={2}>Почему?</LHeading>
           <br />
@@ -691,7 +934,7 @@ export default class Presentation extends React.Component {
         </Slide>
         <Slide>
           <LText textColor="quaternary">
-            {planList[4]} →
+            Специфика →
           </LText>
           <LHeading size={2}>Ещё почему?</LHeading>
           <br />
@@ -705,7 +948,7 @@ export default class Presentation extends React.Component {
         </Slide>
         <Slide>
           <LText textColor="quaternary">
-            {planList[4]} →
+            Специфика →
           </LText>
           <LHeading size={2}>Бонусы айти</LHeading>
           <br />
@@ -719,9 +962,22 @@ export default class Presentation extends React.Component {
           </CustomList>
           <SPAN />
         </Slide>
+        <Slide bgColor="secondary" bgImage={kraynov} bgSize="contain" bgRepeat="no-repeat">
+          <LText textColor="quaternary">
+            &nbsp;
+          </LText>
+          <Appear>
+            <LLHeading bgColor="primary" size={2}>Макс Крайнов</LLHeading>
+          </Appear>
+          <SPAN />
+          <Notes>
+            <p>Максим рассказывал в блоге, как объяснял это понятие сыну:</p>
+            <p>— Тебе нравится сегодняшний день? Да? Лайфстайл — это возможность его повторить тогда, когда тебе это удобно (или хочется).</p>
+          </Notes>
+        </Slide>
         <Slide>
           <LText textColor="quaternary">
-            {planList[4]} →
+            Специфика →
           </LText>
           <LHeading size={2}>Ещё бонусы айти</LHeading>
           <br />
@@ -737,9 +993,10 @@ export default class Presentation extends React.Component {
         </Slide>
         <Slide>
           <LText textColor="quaternary">
-            {planList[4]} →
+            Специфика →
           </LText>
           <LHeading size={2}>Зачем?</LHeading>
+          <br />
           <CustomList>
             <AListItem>примириться с собой;</AListItem>
             <AListItem>получать больше удовольствия от жизни;</AListItem>
@@ -770,13 +1027,6 @@ export default class Presentation extends React.Component {
             </Fill>
           </Layout>
         </Slide>
-
-        {/*<Slide bgColor="secondary" textColor="primary">
-          <BlockQuote>
-            <Quote>Example Quote</Quote>
-            <Cite>Author</Cite>
-          </BlockQuote>
-        </Slide>*/}
       </Deck>
     );
   }
