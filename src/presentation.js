@@ -4,14 +4,11 @@ import styled from 'react-emotion';
 
 // Import Spectacle Core tags
 import {
-  BlockQuote,
-  Cite,
   Deck,
   Heading,
   ListItem,
   List,
   Layout, Fill,
-  Quote,
   S,
   Slide,
   Text,
@@ -27,8 +24,6 @@ import exante from './images/exante.jpg';
 import pleeco from './images/pleeco-logo-open.svg';
 import split from './images/split.svg';
 import levels from './images/levels.svg';
-import newton from './images/newton.jpg';
-import freud from './images/freud.jpg';
 import eap from './images/eap.gif';
 import me from './images/me.jpg';
 import skeletons from './images/skeletons.jpg';
@@ -36,17 +31,30 @@ import paei from './images/paei.jpg';
 import bigFive from './images/big-five.png';
 import anxietyTech from './images/anxiety-tech.png';
 import nikita from './images/nikita.png';
-import maslow from './images/maslow.jpg';
-import shutov from './images/shutov.png';
-import pyramid from './images/maslow-pyramid.gif';
 import annas from './images/annas.png';
 import talks from './images/talks.png';
-import nancy from './images/nancy2.jpeg';
 import korol from './images/korol.png';
-import alter from './images/alter.png';
-import breeze from './images/breeze.png';
-import yasno from './images/yasno.svg';
 import kraynov from './images/kraynov.jpg';
+import logo404 from './images/404.gif';
+import schulman from './images/schulman.jpg';
+import petranovskaya from './images/petranovskaya.jpg';
+import imja from './images/imja.jpg';
+import perls from './images/perls.jpg';
+import zicer from './images/zicer.jpg';
+import morton from './images/morton.jpg';
+import razobralis from './images/razobralis.jpg';
+import burnout from './images/burnout.jpg';
+import depra from './images/depra.jpg';
+import aaa from './images/aaa.png';
+import roaches from './images/roaches.jpg';
+import good from './images/good.jpg';
+import life from './images/life.gif';
+import deadline from './images/deadline.jpg';
+import shurik from './images/shurik.jpg';
+import diploma from './images/diploma.jpg';
+import mom from './images/mom.jpg';
+import money from './images/money.jpg';
+import shark from './images/shark.jpg';
 
 const LHeading = styled(Heading)`
   text-align: left;
@@ -84,12 +92,13 @@ const LImage = styled(Image)`
   margin-right: 0;
   display: inline-block;
   float: left;
-  clear: left;
 `;
 
 const RImage = styled(Image)`
   margin-left: 0;
   margin-right: 0;
+  display: inline-block;
+  float: right;
 `;
 
 const ChushText = styled(Text)`
@@ -148,23 +157,18 @@ const theme = createTheme(
 );
 
 const planList = [
+  'О себе',
   'Дисклеймер',
   'Вдохновение',
-  'О себе',
+  'Гигиена',
+  'Специфика',
   'Ликбез',
   'Заблуждения',
-  'Фон',
-  'Специфика',
-  'Гигиена',
 ];
-
-const AListItem = ({ children }) => (
-  <Appear><ListItem>{children}</ListItem></Appear>
-);
 
 const plan = (index) => (
   <Slide bgColor="primary" textColor="tertiary" id={`part-${index + 1}`}>
-    <LText textColor="quaternary">
+    <LText>
       &nbsp;
     </LText>
     <LHeading size={1}>
@@ -183,8 +187,7 @@ const plan = (index) => (
 
 export default class Presentation extends React.Component {
   render() {
-
-    let planStep = -1;
+    let planStep = 0;
 
     return (
       <Deck
@@ -194,20 +197,25 @@ export default class Presentation extends React.Component {
         transitionDuration={500}
         theme={theme}
       >
-        <Slide bgColor="primary">
-          <LText textColor="quaternary">&nbsp;</LText>
-          <LHeading size={1} textColor="secondary">
+        <Slide bgColor="secondary" bgImage={logo404} bgRepeat="no-repeat" bgSize="50%" bgPosition="bottom right">
+          <LText>&nbsp;</LText>
+          <LHeading size={1} textColor="primary">
             Психология
           </LHeading>
-          <LHeading size={2} textColor="secondary">
+          <LHeading size={2} textColor="primary">
             для айтишников
           </LHeading>
           <br />
           <br />
-          <LText textColor="tertiary" size={1}>
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <LText textColor="tertiary">
             Дима Семьюшкин
           </LText>
-          <LText textColor="quaternary" size={1}>
+          <LText textColor="primary">
             октябрь 2018, 404 Fest
           </LText>
           <Appear>
@@ -216,96 +224,8 @@ export default class Presentation extends React.Component {
           <SPAN />
         </Slide>
         {plan(planStep++)}
-        {plan(planStep++)}
         <Slide>
-          <LText textColor="quaternary">
-            &nbsp;
-          </LText>
-          <LHeading size={3}>Дисклеймер</LHeading>
-          <br />
-          <CustomList>
-            <AListItem>сборная солянка;</AListItem>
-            <AListItem>субъективность;</AListItem>
-            <AListItem>самокритичность;</AListItem>
-            <AListItem>шуточки;</AListItem>
-          </CustomList>
-          <SPAN />
-        </Slide>
-        {plan(planStep++)}
-        <Slide>
-          <LText textColor="quaternary">
-            Вдохновение →
-          </LText>
-          <LHeading size={4}>Истории депрессии и выгорания</LHeading>
-          <LImage width="100%" src={nikita} />
-          <SPAN />
-        </Slide>
-        <Slide>
-          <LText textColor="quaternary">
-            Вдохновение →
-          </LText>
-          <LHeading size={4}>Истории депрессии и выгорания</LHeading>
-          <LImage width="100%" src={annas} />
-          <SPAN />
-        </Slide>
-        <Slide>
-          <LText textColor="quaternary">
-            Вдохновение →
-          </LText>
-          <LHeading size={4}>Выступления о выгорании</LHeading>
-          <LImage width="100%" src={talks} />
-          <SPAN />
-          <Notes>
-            Ссылки
-            https://youtu.be/K6oZuB8_dU8
-            https://youtu.be/G5_pR0GLQmE
-
-          </Notes>
-        </Slide>
-        <Slide>
-          <LText textColor="quaternary">
-            Вдохновение →
-          </LText>
-          <LHeading size={3}>Anxiety tech</LHeading>
-          <Image width="100%" src={anxietyTech} />
-          <SPAN />
-        </Slide>
-        <Slide>
-          <LText textColor="quaternary">
-            Вдохновение →
-          </LText>
-          <LHeading size={3}>Велосипед</LHeading>
-          <LImage width="80%" src={shutov} />
-          <SPAN />
-        </Slide>
-        <Slide>
-          <LText textColor="quaternary">
-            Вдохновение →
-          </LText>
-          <LHeading size={3}>Сергей Король</LHeading>
-          <LImage width="80%" src={korol} />
-          <SPAN />
-        </Slide>
-        <Slide>
-          <LText textColor="quaternary">
-            Вдохновение →
-          </LText>
-          <LHeading size={3}>Developer survey</LHeading>
-          <br />
-          <CustomList>
-            <AListItem>93% — мужчины;</AListItem>
-            <AListItem>75% — до 35 лет;</AListItem>
-            <AListItem>11,5% — сообщают о РЛ;</AListItem>
-            <AListItem>20% — жителей США имеют депрессию и/или тревогу.</AListItem>
-          </CustomList>
-          <br />
-          <RText textColor="quaternary">Stack Overflow Developer survey, 2018</RText>
-          <RText textColor="quaternary">insights.stackoverflow.com/survey/2018</RText>
-          <SPAN />
-        </Slide>
-        {plan(planStep++)}
-        <Slide>
-          <LText textColor="quaternary">О себе →</LText>
+          <LText textColor="secondary">О себе →</LText>
           <LHeading size={2}>Веб-разработчик</LHeading>
           <br />
           <Image width="30%" src={exante} />
@@ -313,36 +233,337 @@ export default class Presentation extends React.Component {
           <Image width="30%" src={pleeco} />
           <SPAN />
           <Notes>
-            <p>Я около десяти лет занимаюсь программирование, первые пять лет работал в небольшой питерской компании которая создавала софт для мобильных операторов.</p>
-            <p>А последние пять лет моей карьеры — в этих логотипах. Год в Exante, три в Лаборатории данных и последний год — в Pleeco. Веб-разработка, визуализация данных, вот это всё.</p>
+            <p>Я 11 лет занимаюсь программированием и последние 5 лет моей — в этих логотипах. Год в Exante, три в Лаборатории данных и последний год — в Pleeco. Веб-разработка, визуализация данных, вот это всё.</p>
             <p>Для нашего сегодяншнего разговора самое важное — три года в Лаборатории. Благодаря директору — Тане Бибиковой — у меня была возможность работать и учиться в питерском институте гештальта.</p>
           </Notes>
         </Slide>
-        <Slide>
-          <LText textColor="quaternary">О себе →</LText>
-          <LHeading size={2}>...и гештальтист</LHeading>
+        <Slide bgColor="black" bgImage={perls} bgSize="contain" bgRepeat="no-repeat">
           <br />
-          <LText>Гештальт-терапия — один из подходов психотерапии.</LText>
           <br />
-          <Appear><LText>Трёхлетняя программа обучения:</LText></Appear>
-          <CustomList>
-            <AListItem>400 часов теории и практики;</AListItem>
-            <AListItem>200 часов групповой терапии;</AListItem>
-            <AListItem>20 часов личной терапии.</AListItem>
-          </CustomList>
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <LLText bgColor="primary" textColor="secondary">О себе →</LLText>
+          <LLHeading bgColor="primary" size={2}>...и гештальтист</LLHeading>
           <SPAN />
           <Notes>
             <p>Три года — полная программа обучения, я научился психотерапии в гештальт-подходе.</p>
-            <p>Это не единственный мой опыт в психологии, конечно. Я учился, читал книги, посещал тренинги, учился их вести, придумывал и вёл свои.</p>
-            <p>Называть себя психотерапевтом я формально не могу и подробнее ещё расскажу про это, но сегодня важно не это.</p>
-            <p>Я планирую поделиться с вами выжимкой той информации, которую собрал за годы интереса к предмету, в надежде что это будет вам полезно.</p>
-            <p>Интерес и был тем, что подталкивало меня. Учёба небесплатная — я потратил деньги, время, усилия.</p>
-            <p>Но я доволен своим опытом и одна из вещей которой я доволен отдельно — возможность применять навыки одной профессии в другой.</p>
+            <p>Для оценки масштаба: 200 часов групповой терапии, 400 часов теории и практики, от 20 часов личной терапии. Плюс супервизия — я буду сегодня ещё про это говорить — работа под наблюдением опытного специалиста.</p>
+            <p>Это не единственный мой опыт в психологии. Я учился, читал книги, посещал тренинги, учился их вести, придумывал и вёл свои.</p>
+            <p>Я не планирую делать какой-то центральный фокус на гештальт-терапии, скорее поговорю о тех моментах когда она быть полезной.</p>
           </Notes>
         </Slide>
         {plan(planStep++)}
         <Slide>
-          <LText textColor="quaternary">
+          <LText>
+            &nbsp;
+          </LText>
+          <LHeading size={2}>Дисклеймер</LHeading>
+          <br />
+          <Image width="70%" src={razobralis} />
+          <SPAN />
+          <Notes>
+            <p>Я начну с дисклеймера, расскажу об ограничениях выступления</p>
+            <p>Я буду по большому счёту рассказывать про стресс связанный с работой, в чём его спефицика у айтишников и что с ним можно делать.</p>
+            <p>Я буду субъективен и самокритичен, я рассказываю опираясь на собственный опыт и образование.</p>
+            <p>Мой рассказ — затравка. Я надеюсь что он послужит поводом другим говорить о том же.</p>
+            <p>Я буду упоминать имена людей и давать ссылки на различные материалы и проекты. Ссылки в презентации, в конце покажу где скачать.</p>
+          </Notes>
+        </Slide>
+        {plan(planStep++)}
+        <Slide>
+          <LText textColor="secondary">
+            Вдохновение →
+          </LText>
+          <LHeading size={4}>Истории депрессии и выгорания</LHeading>
+          <LImage width="100%" src={nikita} />
+          <SPAN />
+          <Notes>
+            <p>Большое впечатление на меня произвела история Никиты Прокопова, о том как он 5 лет провёл в депрессии. И удивился реакция в твиттере: народ принялся обсуждать, а на самом ли деле это депрессия или нет и т.п.</p>
+            <p>Ссылка: https://tonsky.livejournal.com/317265.html</p>
+          </Notes>
+        </Slide>
+        <Slide>
+          <LText textColor="secondary">
+            Вдохновение →
+          </LText>
+          <LHeading size={4}>Истории депрессии и выгорания</LHeading>
+          <LImage width="100%" src={annas} />
+          <SPAN />
+          <Notes>
+            <p>История Ани похожа. Она работала в Злых Марсианах, и это интересный пример того чем может обернуться «работа мечты»</p>
+            <p>Ссылка: https://askd.livejournal.com/127949.html</p>
+          </Notes>
+        </Slide>
+        <Slide>
+          <LText textColor="secondary">
+            Вдохновение →
+          </LText>
+          <LHeading size={4}>Выступления о выгорании</LHeading>
+          <LImage width="100%" src={talks} />
+          <SPAN />
+          <Notes>
+            <p>Саша Орлов из Стратоплана и Илья Якямсев уже рассказали про выгорание, если ещё не смотрели — советую.</p>
+            <p>Ссылки:</p>
+            <p>https://youtu.be/K6oZuB8_dU8</p>
+            <p>https://youtu.be/G5_pR0GLQmE</p>
+          </Notes>
+        </Slide>
+        <Slide>
+          <LText textColor="secondary">
+            Вдохновение →
+          </LText>
+          <LHeading size={3}>Anxiety tech</LHeading>
+          <Image width="100%" src={anxietyTech} />
+          <SPAN />
+          <Notes>
+            <p>Конференция AnxietyTech по сути посвящена теме моего доклада — о психическом здоровье для айтишников, записи есть на ютубе.</p>
+            <p>Ссылка: https://www.anxietytech.com/</p>
+          </Notes>
+        </Slide>
+        <Slide>
+          <LText textColor="secondary">
+            Вдохновение →
+          </LText>
+          <LHeading size={3}>Сергей Король</LHeading>
+          <LImage width="80%" src={korol} />
+          <SPAN />
+          <Notes>
+            <p>Ссылка: http://sergeykorol.ru/blog/therapy/</p>
+          </Notes>
+        </Slide>
+        {plan(planStep++)}
+        <Slide bgColor="black" bgImage={good} bgSize="contain" bgRepeat="no-repeat">
+          <Notes>
+            <p>Я начну разговор с темы стресса.</p>
+            <p>Это неотъемлемая часть нашей жизни, ничего фатального в ней нет.</p>
+            <p>Однако уровень стресса в жизни не постоянен, есть события которые его ↑↓ — смена работы или роли, изменения в личной жизни и так далее.</p>
+            <p>Есть некоторые вещи, которые нарушаются в нашей жизни когда стресса становится больше: сон, питание, отдых, физическая активность, медитативные практики.</p>
+            <p>Важно понимать свои нормы в этих вещах и замечать, когда они нарушаются.</p>
+            <p>Если у вас был период напряга и на его фоне пропал сон, аппетит — обратите на это внимание, дайте себе восстановиться обратно.</p>
+          </Notes>
+        </Slide>
+        <Slide bgColor="black" bgImage={shark} bgSize="contain" bgRepeat="no-repeat">
+          <Notes>
+            <p>Как иллюстрация того, на что провоцирует стресс.</p>
+          </Notes>
+        </Slide>
+        <Slide bgColor="black" bgImage={imja} bgSize="contain" bgRepeat="no-repeat">
+          <LLText textColor="primary" bgColor="black">Информационное окружение →</LLText>
+          <LLHeading size={2} textColor="primary" bgColor="black">Адриана</LLHeading>
+          <LLHeading size={2} textColor="primary" bgColor="black">Имж</LLHeading>
+          <SPAN />
+          <Notes>
+            <p>Хорошей идеей</p>
+          </Notes>
+        </Slide>
+        <Slide bgColor="black" bgImage={morton} bgSize="contain" bgRepeat="no-repeat">
+          <LLText textColor="primary" bgColor="black">Информационное окружение →</LLText>
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <LLHeading size={2} textColor="primary" bgColor="black">Kati Morton</LLHeading>
+          <SPAN />
+        </Slide>
+        <Slide bgColor="primary" bgImage={petranovskaya} bgSize="contain" bgRepeat="no-repeat">
+          <LLText textColor="primary" bgColor="black">Информационное окружение →</LLText>
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <LLHeading size={2} textColor="primary" bgColor="black">Людмила</LLHeading>
+          <LLHeading size={2} textColor="primary" bgColor="black">Петрановская</LLHeading>
+          <SPAN />
+        </Slide>
+        <Slide bgColor="primary" bgImage={zicer} bgSize="contain" bgRepeat="no-repeat">
+          <LLText textColor="primary" bgColor="black">Информационное окружение →</LLText>
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <LLHeading size={2} textColor="primary" bgColor="black">Дима Зицер</LLHeading>
+          <SPAN />
+        </Slide>
+        <Slide bgColor="primary" bgImage={schulman} bgSize="contain" bgRepeat="no-repeat">
+          <LLText textColor="primary" bgColor="black">Информационное окружение →</LLText>
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <LLHeading size={2} textColor="primary" bgColor="black">Екатерина</LLHeading>
+          <LLHeading size={2} textColor="primary" bgColor="black">Шульман</LLHeading>
+          <SPAN />
+        </Slide>
+        <Slide bgImage={depra} bgSize="contain" bgRepeat="no-repeat" >
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <LLText textColor="secondary" bgColor="primary">
+            Гигиена →
+          </LLText>
+          <LLHeading size={2} bgColor="primary">Депрессия</LLHeading>
+          <SPAN />
+          <Notes>
+            <p>Депрессия — описанное в МКБ состояние.</p>
+            <p>2 недели сниженного настроения, трудность концентрироваться, ощущение бессмысленности, неуместной вины, безнадёги, повторяющиеся мысли о смерти, изменения аппетита и сна, беспорядочные или замедленные мысли и движения, сниженная энергия и усталость.</p>
+            <p></p>
+          </Notes>
+        </Slide>
+        <Slide bgImage={burnout} bgSize="contain" bgRepeat="no-repeat">
+          <LLText bgColor="primary" textColor="secondary">
+            Гигиена →
+          </LLText>
+          <LLHeading bgColor="primary" size={3}>Выгорание</LLHeading>
+          <br />
+          <SPAN />
+          <Notes>
+            <p>Давайте посмотрим на одно из состояний, вызывающих порядочно резонанса в соцсетях — выгорание</p>
+            <p>Симптомы — эмоциональное опустошение, деперсонализация, отсутствие ощущения удовлетворения от работы.</p>
+            <p>Для меня основная характеристика выгорания это несопоставимость стресса и вознаграждения.</p>
+            <p>Собственно, направления для работы тут два: снижаем стресс, ищем вознаграждения.</p>
+          </Notes>
+        </Slide>
+        {plan(planStep++)}
+        <Slide>
+          <LText textColor="secondary">
+            Специфика →
+          </LText>
+          <LHeading size={3}>Опрос StackOverflow</LHeading>
+          <br />
+          <CustomList>
+            <ListItem>93% — мужчины;</ListItem>
+            <ListItem>75% — до 35 лет;</ListItem>
+            <ListItem>11,5% — сообщают о РЛ;</ListItem>
+            <ListItem>20% — жителей США имеют депрессию и/или тревогу.</ListItem>
+          </CustomList>
+          <br />
+          <RText textColor="secondary">Stack Overflow Developer survey, 2018</RText>
+          <RText textColor="secondary">insights.stackoverflow.com/survey/2018</RText>
+          <SPAN />
+        </Slide>
+        <Slide bgImage={mom} bgSize="75%" bgRepeat="no-repeat">
+          <SPAN />
+        </Slide>
+        <Slide bgImage={life} bgSize="contain" bgRepeat="no-repeat" bgPosition="80%">
+          <LLText bgColor="primary" textColor="secondary">
+            Специфика →
+          </LLText>
+          <LLHeading bgColor="primary" size={3}>Мышление</LLHeading>
+          <SPAN />
+          <Notes>
+            <p>Айтишники — яркий пример людей, работающих с абстракциями.</p>
+            <p>По сути, самая близкая к тому же программированию гуманитарная профессия — лингвист. Мы постоянно держим в голове сопоставления реального мира и абстрактного языка программирования, архитектуры системы и т.п.</p>
+            <p>Айтишников иногда описывают как безэмоциональных, но мне кажется тут есть простое недопонимание. Айтишники эмоциональны, просто их эмоции направлены на то, чем они занимаются.</p>
+          </Notes>
+        </Slide>
+        <Slide bgImage={deadline} bgSize="contain" bgRepeat="no-repeat" bgPosition="80%">
+          <br />
+          <LLText bgColor="primary" textColor="secondary">
+            Специфика →
+          </LLText>
+          <LLHeading bgColor="primary" size={3}>Культура</LLHeading>
+          <SPAN />
+          <Notes>
+            <p>По моим наблюдениям в айти не принято задумываться о своём здоровье.</p>
+            <p>Из-за этого </p>
+          </Notes>
+        </Slide>
+        <Slide bgImage={money} bgSize="contain" bgRepeat="no-repeat">
+          <LLText textColor="secondary" bgColor="primary">
+            Специфика →
+          </LLText>
+          <LLHeading bgColor="primary" size={2}>Зарплата</LLHeading>
+          <br />
+          <Notes>
+            <p>Хорошие зарплаты дают возможности:</p>
+            <p>качественно отдыхать;</p>
+            <p>учиться;</p>
+            <p>лечиться;</p>
+            <p>делегировать рутину;</p>
+            <p>выстраивать «лайфстайл».</p>
+            <p>Есть и другие бонусы айти —</p>
+            <p>возможен гибкий график;</p>
+            <p>возможна удалённая работа;</p>
+            <p>возможен быстрый карьерный рост;</p>
+            <p>большой рынок труда;</p>
+            <p>«непыльная» работа;</p>
+            <p>привычка учиться.</p>
+          </Notes>
+          <SPAN />
+        </Slide>
+        <Slide bgColor="secondary" bgImage={kraynov} bgSize="contain" bgRepeat="no-repeat">
+          <LText>
+            &nbsp;
+          </LText>
+          <Appear>
+            <LLHeading bgColor="primary" size={2}>Макс Крайнов</LLHeading>
+          </Appear>
+          <SPAN />
+          <Notes>
+            <p>Максим рассказывал в блоге, как объяснял это понятие сыну:</p>
+            <p>— Тебе нравится сегодняшний день? Да? Лайфстайл — это возможность его повторить тогда, когда тебе это удобно (или хочется).</p>
+          </Notes>
+        </Slide>
+        {plan(planStep++)}
+        <Slide>
+          <LText textColor="secondary">
             Ликбез →
           </LText>
           <LHeading size={2}>
@@ -373,56 +594,14 @@ export default class Presentation extends React.Component {
           </Notes>
         </Slide>
         <Slide>
-          <LText textColor="quaternary">
-            Ликбез →
-          </LText>
-          <LHeading size={2}>
-            Психолог
-          </LHeading>
-          <br />
-          <LText>
-            Высшее образование в психологии
-          </LText>
-          <br />
-          <LText>
-            Может:
-          </LText>
-          <CustomList>
-            <ListItem>консультировать;</ListItem>
-            <ListItem>вести исследования;</ListItem>
-            <ListItem>быть HR;</ListItem>
-            <ListItem>создавать и вести тренинги;</ListItem>
-            <ListItem>учить, преподавать, воспитывать.</ListItem>
-          </CustomList>
-          <SPAN />
-          <Notes>
-            <p>Психолог — человек с высшим психологическим образованием.</p>
-            <p>Он может исполнять разные роли, часть из них перечислена здесь.</p>
-            <p>Обратите внимание, «психотерапии» здесь нет. Психолог не лечит, он работает со здоровыми людьми. Однако, психологи часто идут учиться на психотерпевтов.</p>
-            <p>Такую связку навыков я считаю оптимальной, знаю ребят и девушек с таким образованием и такое сочетание хорошо дополняет друг друга.</p>
-            <p>Кроме того, даже если специалист молодой, такая связка позволяет чувствовать себя уверенно, а это довольно важно.</p>
-          </Notes>
-        </Slide>
-        <Slide>
-          <LText textColor="quaternary">
+          <LText textColor="secondary">
             Ликбез →
           </LText>
           <LHeading size={2}>
             Психиатр
           </LHeading>
           <br />
-          <LText>
-            Врач, высшее образование в психиатрии
-          </LText>
-          <br />
-          <LText>
-            Может:
-          </LText>
-          <CustomList>
-            <ListItem>диагностировать личностные растройства;</ListItem>
-            <ListItem>лечить личностные расстройства;</ListItem>
-            <ListItem>использовать фарму.</ListItem>
-          </CustomList>
+          <Image width="100%" src={shurik} />
           <SPAN />
           <Notes>
             <p>Психиатр — врач. 8 лет учёбы — и вы тоже можете таким стать.</p>
@@ -436,24 +615,31 @@ export default class Presentation extends React.Component {
           </Notes>
         </Slide>
         <Slide>
-          <LText textColor="quaternary">
+          <LText textColor="secondary">
+            Ликбез →
+          </LText>
+          <LHeading size={2}>
+            Психолог
+          </LHeading>
+          <Image width="100%" src={diploma} />
+          <SPAN />
+          <Notes>
+            <p>Психолог — человек с высшим психологическим образованием.</p>
+            <p>Он может исполнять разные роли, часть из них перечислена здесь.</p>
+            <p>Обратите внимание, «психотерапии» здесь нет. Психолог не лечит, он работает со здоровыми людьми. Однако, психологи часто идут учиться на психотерпевтов.</p>
+            <p>Такую связку навыков я считаю оптимальной, знаю ребят и девушек с таким образованием и такое сочетание хорошо дополняет друг друга.</p>
+            <p>Кроме того, даже если специалист молодой, такая связка позволяет чувствовать себя уверенно, а это довольно важно.</p>
+          </Notes>
+        </Slide>
+        <Slide>
+          <LText textColor="secondary">
             Ликбез →
           </LText>
           <LHeading size={2}>
             Психотерапевт
           </LHeading>
           <br />
-          <LText>
-            Всё сложно
-          </LText>
-          <br />
-          <LText>
-            Может:
-          </LText>
-          <CustomList>
-            <ListItem>заниматься психотерапией;</ListItem>
-            <ListItem>вести психотерапевтические группы.</ListItem>
-          </CustomList>
+          <Image width="100%" src={roaches} />
           <SPAN />
           <Notes>
             <p>Помимо того, что уже сказано про психотерапевтов, подведу некоторый итог.</p>
@@ -463,7 +649,7 @@ export default class Presentation extends React.Component {
           </Notes>
         </Slide>
         <Slide>
-          <LText textColor="quaternary">
+          <LText textColor="secondary">
             Ликбез →
           </LText>
           <LHeading size={4}>Психотерапевтические подходы</LHeading>
@@ -472,8 +658,8 @@ export default class Presentation extends React.Component {
           <LText>Трансактный анализ</LText>
           <LText>Когнитивно-поведенческая терапия</LText>
           <LText>Семейная терапия</LText>
-          <LText>Гештальт-терапия</LText>
           <LText>Экзистенциальная терапия</LText>
+          <LText>Гештальт-терапия</LText>
           <LText>EMDR</LText>
           <LText>Психодрама</LText>
           <Notes>
@@ -485,7 +671,7 @@ export default class Presentation extends React.Component {
           <SPAN />
         </Slide>
         <Slide>
-          <LText textColor="quaternary">
+          <LText textColor="secondary">
             Ликбез →
           </LText>
           <LHeading size={4}>Психотерапевтические подходы</LHeading>
@@ -494,8 +680,8 @@ export default class Presentation extends React.Component {
           <LText textColor="quaternary">Трансактный анализ</LText>
           <LText>Когнитивно-поведенческая терапия</LText>
           <LText textColor="quaternary">Семейная терапия</LText>
+          <LText>Экзистенциальная терапия</LText>
           <LText>Гештальт-терапия</LText>
-          <LText textColor="quaternary">Экзистенциальная терапия</LText>
           <LText textColor="quaternary">EMDR</LText>
           <LText textColor="quaternary">Психодрама</LText>
           <Notes>
@@ -506,82 +692,8 @@ export default class Presentation extends React.Component {
           </Notes>
           <SPAN />
         </Slide>
-        <Slide bgColor="secondary" bgImage={freud} bgSize="contain" bgRepeat="no-repeat">
-          <LLText textColor="quaternary" bgColor="primary">Ликбез →</LLText>
-          <Appear>
-            <LLHeading size={2} bgColor="primary">Фрейд</LLHeading>
-          </Appear>
-          <SPAN />
-          <Notes>
-            <p>Это Фрейд. Именно его чаще всего вспоминают, когда говорят о психологии.</p>
-            <p>С него начну рассказ и я. Фрейд многое дал психологии, его идеи дали мощный толчок клинической психологии и психиатрии. Сформулированный им подход к лечению — психоанализ — используется до сих пор.</p>
-            <p>И до сих пор, если психотерапевт видит что клиенту трудно говорить о эмоциях — он предложит клиенту прилечь, зная что это поможет.</p>
-          </Notes>
-        </Slide>
-        <Slide bgColor="black" bgImage={newton} bgSize="contain" bgRepeat="no-repeat">
-          <Appear>
-            <SecondaryCT textColor="red" caps>&nbsp;Нет</SecondaryCT>
-          </Appear>
-          <Notes>
-            <p>
-              Однако, известность Фрейда играет злую шутку. Людям порой кажется что если бы не он — психологии бы не существовало.
-            </p>
-            <p>
-              Или что он открыл истинную правду и только на его догмах психология и стоит. Или что он давно устарел и вся психология вместе с ним.
-            </p>
-            <p>
-              Фрейд, конечно, не был пророком. Он не открыл истинную правду. Его методы не были научными. Многие предложенные им модели моделями и остаются, непроверенными и непроверяемыми. Есть даже подозрения что некоторые успешные кейсы он подделал.
-            </p>
-            <p>
-              Фрейд был сексистом, и, похоже, сам это понимал. Психоанализ, теория психосексуального развития — во многом это показывают.
-            </p>
-          </Notes>
-        </Slide>
         <Slide>
-          <LText textColor="quaternary">
-            Ликбез →
-          </LText>
-          <LHeading size={2}>Наследие психоанализа</LHeading>
-          <br />
-          <CustomList>
-            <ListItem>Догмы → наука</ListItem>
-            <ListItem>Поиск смысла → изучение феноменов</ListItem>
-            <ListItem>Утилитаризм → экзистенциализм</ListItem>
-          </CustomList>
-          <SPAN />
-          <Notes>
-            <p>
-              Значительная часть П/А — герменевтика, поиск смыслов и причин. Каково истинное значение того сна? Занимаясь толкованиями, важно помнить что всегда есть тот кто толкует и то, что обуславливает это толкование. Кто он? Каким языком он пользуется?
-            </p>
-            <p>Фрейдовский П/А догматичен и наполнен придуманными моделями. Это подтолкнуло многих психологов к научному подходу.</p>
-            <p>Альтернатива герменевтике — феноменология. Её язык — язык феноменов. Говорим о том, что точно есть, здесь и сейчас.</p>
-            <p>Фрейд утилитарен. Его подход — встреча больного и пациента, ради излечения конкретных проблем. Иногда это слишком поверхностно, а работать хочется глубже. Хочется развития а не лечения. Тогда нас интересует экзистенциализм. Экзистенциальная встреча — гораздо более равная чем психоаналитическая.</p>
-          </Notes>
-        </Slide>
-        <Slide bgImage={maslow} bgSize="contain" bgRepeat="no-repeat" bgPosition="right">
-          <LLText textColor="quaternary" bgColor="primary">Ликбез →</LLText>
-          <Appear>
-            <LLHeading size={2} bgColor="primary">Абрахам<br />Маслоу</LLHeading>
-          </Appear>
-          <SPAN />
-          <Notes>
-            <p>Это Абрахам Маслоу. Его вы скорее всего знаете как автора «пирамиды потребностей».</p>
-          </Notes>
-        </Slide>
-        <Slide bgImage={pyramid} bgSize="contain" bgRepeat="no-repeat">
-        </Slide>
-        <Slide bgImage={nancy} bgSize="contain" bgRepeat="no-repeat">
-          <LLText textColor="quaternary" bgColor="primary">Ликбез →</LLText>
-          <Appear>
-            <LLHeading size={2} bgColor="primary">Нэнси<br />МакВильямс</LLHeading>
-          </Appear>
-          <SPAN />
-          <Notes>
-            <p></p>
-          </Notes>
-        </Slide>
-        <Slide>
-          <LText textColor="quaternary">
+          <LText textColor="secondary">
             Ликбез →
           </LText>
           <LHeading size={4}>Европейская ассоциация психотерапии</LHeading>
@@ -596,52 +708,16 @@ export default class Presentation extends React.Component {
           </Notes>
         </Slide>
         <Slide>
-          <LText textColor="quaternary">
+          <LText textColor="secondary">
             Ликбез →
           </LText>
-          <LHeading size={4}>Современные проекты</LHeading>
+          <LHeading size={2}>Поисковики</LHeading>
           <br />
+          <LHeading size={1}>B17.RU</LHeading>
+          <LHeading size={1}>PSYALTER.RU</LHeading>
+          <LHeading size={1}>BREEZE.LIVE</LHeading>
+          <LHeading size={1}>YASNO.LIVE</LHeading>
           <br />
-          <br />
-          <Heading size={1}>B17.RU</Heading>
-          <SPAN />
-          <Notes>
-          </Notes>
-        </Slide>
-        <Slide>
-          <LText textColor="quaternary">
-            Ликбез →
-          </LText>
-          <LHeading size={4}>Современные проекты</LHeading>
-          <br />
-          <Image width="100%" src={alter} />
-          <Text>psyalter.ru</Text>
-          <SPAN />
-          <Notes>
-          </Notes>
-        </Slide>
-        <Slide>
-          <LText textColor="quaternary">
-            Ликбез →
-          </LText>
-          <LHeading size={4}>Современные проекты</LHeading>
-          <br />
-          <br />
-          <Image width="100%" src={breeze} />
-          <br />
-          <Text>breeze.live</Text>
-          <SPAN />
-          <Notes>
-          </Notes>
-        </Slide>
-        <Slide>
-          <LText textColor="quaternary">
-            Ликбез →
-          </LText>
-          <LHeading size={4}>Современные проекты</LHeading>
-          <br />
-          <Image width="80%" src={yasno} />
-          <Text>yasno.live</Text>
           <SPAN />
           <Notes>
           </Notes>
@@ -680,27 +756,6 @@ export default class Presentation extends React.Component {
             <p>Вот такая шкала используется в МКБ-11, стандарте вышедшем в 2018 году.</p>
             <p>Для сравнения, десятая версия вышла в 1996. В 11 версии трансгендерность перестала считаться расстройством, а зависимость от видеоигр — добавилась.</p>
             <p>В России МКБ используется не всегда, но в мире этот стандарт популярен.</p>
-          </Notes>
-        </Slide>
-        <Slide bgImage={levels}>
-          <Text>Условно здоровый</Text>
-          <br />
-          <br />
-          <Text>Невротик</Text>
-          <br />
-          <br />
-          <Text textColor="primary">Пограничный уровень</Text>
-          <br />
-          <br />
-          <Text textColor="primary">Психотик</Text>
-          <br />
-          <br />
-          <br />
-          <Notes>
-            <p>А вот этой шкалой пользуются гештальтисты.</p>
-            <p>Для понимания: невротик — человек, имеющий внутренние конфликты. В общем — нормальное состояние жителя города, общающегося с другими, активно решающего творческие задачи, сталкивающегося с ежедневными конфликтами.</p>
-            <p>Психоз — состояние, когда человек не отличает, что реально а что нет. Это к психиатру.</p>
-            <p>Пограничный уровень — посередине. С одной стороны внешне это чаще здоровые люди, их не так легко отличить как психотиков. Чаще возникает у женщин, характеризуется эмоциональной нестабильностью, повышенным риском суицида, чаще сопровождается другими расстройствами. Иногда — алкоголизм, промискуитети другое т.н. «повреждающее поведение».</p>
           </Notes>
         </Slide>
         <Slide bgColor="secondary">
@@ -790,10 +845,10 @@ export default class Presentation extends React.Component {
           </Appear>
         </Slide>
         <Slide>
-          <LText textColor="quaternary">
+          <LText textColor="secondary">
             Заблуждения →
           </LText>
-          <LHeading size={5}>Работа с травмой</LHeading>
+          <LHeading size={3}>Работа с травмой</LHeading>
           <br />
           <Image width="100%" src={skeletons} />
           <SPAN />
@@ -833,7 +888,7 @@ export default class Presentation extends React.Component {
           </Notes>
         </Slide>
         <Slide>
-          <LText textColor="quaternary">
+          <LText textColor="secondary">
             Заблуждения →
           </LText>
           <LHeading size={4}>Типы руководителей</LHeading>
@@ -850,7 +905,7 @@ export default class Presentation extends React.Component {
           </Notes>
         </Slide>
         <Slide>
-          <LText textColor="quaternary">
+          <LText textColor="secondary">
             Заблуждения →
           </LText>
           <LHeading size={4}>Большая пятёрка</LHeading>
@@ -862,154 +917,26 @@ export default class Presentation extends React.Component {
             <p>Эта модель тоже не даёт «типы», самый простой способ её использовать — оценивать сходство.</p>
           </Notes>
         </Slide>
-        <Slide>
-          <LText textColor="quaternary">
-             &nbsp;
-          </LText>
-          <LHeading size={2}>Итого</LHeading>
-          <br />
-          <CustomList>
-            <ListItem>вы не псих, но терапия может помочь;</ListItem>
-            <ListItem>важно понимать, какие навыки имеет специалист;</ListItem>
-            <ListItem>существуют разные подходы;</ListItem>
-            <ListItem>у терапевта есть образование, свой&nbsp;терапевт и&nbsp;супервизор.</ListItem>
-          </CustomList>
-          <SPAN />
-        </Slide>
-        {plan(planStep++)}
-        <Slide>
-          <LText textColor="quaternary">
-            Фон →
-          </LText>
-          <LHeading size={2}>Непростое прошлое</LHeading>
-          <br />
-          <CustomList>
-            <AListItem>габитус бедности: postnauka.ru/video/65819;</AListItem>
-            <AListItem>культура подвига;</AListItem>
-            <AListItem>оценочность;</AListItem>
-            <AListItem>обусловенность принятия как норма;</AListItem>
-            <AListItem>«стокгольмский синдром».</AListItem>
-          </CustomList>
-          <SPAN />
-          <Notes>
-            <p>В нашей стране покупательская способность ниже чем в США в 2 раза, на момент развала СССР — в три.</p>
-            <p>Жизнь в бедности влияет на людей, об этом хорошо рассказали на ПостНауке: <a href="https://postnauka.ru/video/65819">видео</a></p>
-            <p>Страна прошла через две войны и цепочку революций, одно из последствий — то, что Людмила Петрановская обозвала «травмой поколений». Мне кажется важным такой её аспект: подвиг становится нормой. Игнорирование собственных потребностей, сверхценность потребностей компании, сверхлояльность — такие вещи  становятся нормой. И тянут к выгоранию.</p>
-            <p><a href="https://www.youtube.com/watch?v=T0YPNjRI7Qc">видео</a>, <a href="https://www.pravmir.ru/lyudmila-petranovskaya-ofitsioznoe-otnoshenie-k-voyne-prestuplenie-pered-psihologicheskim-blagopoluchiem-natsii/">Короткая версия</a>, Оригинальные заметки: <a href="https://ludmilapsyholog.livejournal.com/52399.html">часть 1</a>, <a href="https://ludmilapsyholog.livejournal.com/52649.html">часть 2</a>, <a href="https://ludmilapsyholog.livejournal.com/53022.html">часть 3</a>, <a href="https://ludmilapsyholog.livejournal.com/53418.html">часть 4</a>, <a href="https://ludmilapsyholog.livejournal.com/53949.html">часть 5</a>, <a href="https://ludmilapsyholog.livejournal.com/54193.html">часть 6</a>.
-            </p>
-            <p>Мы с вами рождены в культуре, где норма — искуственная оценка. Проверка соответствия требованиям, не имеющим отношения к реальности. Внешний вид, оценки в школе, поведение.</p>
-            <p>Такие вещи часто переживаются детьми как непринятие их самих, ребёнок понимает что принятие родителем — обусловено и подстраивается под это обстоятельство.</p>
-            <p>Одна из вещей которые мешают нам замечать эти проблемы — СС, нормальная на самом деле реакция психики по оправданию более властных фигур.</p>
-          </Notes>
-        </Slide>
-        <Slide>
-          <LText textColor="quaternary">
-            Фон →
-          </LText>
-          <LHeading size={2}>Обнадёживающее настоящее</LHeading>
-          <br />
-          <CustomList>
-            <AListItem>растёт благосостояние и обеспеченность жильём;</AListItem>
-            <AListItem>интернет даёт доступ к информации;</AListItem>
-            <AListItem>психологическая помощь становится популярнее;</AListItem>
-            <AListItem>состояние рынка труда подталкивает компании заботиться о сотрудниках..</AListItem>
-          </CustomList>
-          <SPAN />
-        </Slide>
-        {plan(planStep++)}
-        <Slide>
-          <LText textColor="quaternary">
-            Специфика →
-          </LText>
-          <LHeading size={2}>Почему?</LHeading>
-          <br />
-          <Appear><LText>много шизоидов:</LText></Appear>
-          <CustomList>
-            <AListItem>сосредоточенная умственная работа;</AListItem>
-            <AListItem>абстрактное мышление;</AListItem>
-            <AListItem>развитое, эмоциональное фантазирование;</AListItem>
-            <AListItem>сложно строить личные отношения.</AListItem>
-          </CustomList>
-          <SPAN />
-        </Slide>
-        <Slide>
-          <LText textColor="quaternary">
-            Специфика →
-          </LText>
-          <LHeading size={2}>Ещё почему?</LHeading>
-          <br />
-          <CustomList>
-            <AListItem>айтишники любят работать;</AListItem>
-            <AListItem>не принято обсуждать психическое здоровье;</AListItem>
-            <AListItem>ограничен круг живого общения;</AListItem>
-            <AListItem>молодая культура.</AListItem>
-          </CustomList>
-          <SPAN />
-        </Slide>
-        <Slide>
-          <LText textColor="quaternary">
-            Специфика →
-          </LText>
-          <LHeading size={2}>Бонусы айти</LHeading>
-          <br />
-          <Appear><LText>хорошие зарплаты дают возможности:</LText></Appear>
-          <CustomList>
-            <AListItem>качественно отдыхать;</AListItem>
-            <AListItem>учиться;</AListItem>
-            <AListItem>лечиться;</AListItem>
-            <AListItem>делегировать рутину;</AListItem>
-            <AListItem>выстраивать «лайфстайл».</AListItem>
-          </CustomList>
-          <SPAN />
-        </Slide>
-        <Slide bgColor="secondary" bgImage={kraynov} bgSize="contain" bgRepeat="no-repeat">
-          <LText textColor="quaternary">
-            &nbsp;
-          </LText>
-          <Appear>
-            <LLHeading bgColor="primary" size={2}>Макс Крайнов</LLHeading>
-          </Appear>
-          <SPAN />
-          <Notes>
-            <p>Максим рассказывал в блоге, как объяснял это понятие сыну:</p>
-            <p>— Тебе нравится сегодняшний день? Да? Лайфстайл — это возможность его повторить тогда, когда тебе это удобно (или хочется).</p>
-          </Notes>
-        </Slide>
-        <Slide>
-          <LText textColor="quaternary">
-            Специфика →
-          </LText>
-          <LHeading size={2}>Ещё бонусы айти</LHeading>
-          <br />
-          <CustomList>
-            <AListItem>возможен гибкий график;</AListItem>
-            <AListItem>возможна удалённая работа;</AListItem>
-            <AListItem>возможен быстрый карьерный рост;</AListItem>
-            <AListItem>работы много;</AListItem>
-            <AListItem>«мозговая работа»;</AListItem>
-            <AListItem>привычка учиться.</AListItem>
-          </CustomList>
-          <SPAN />
-        </Slide>
-        <Slide>
-          <LText textColor="quaternary">
-            Специфика →
-          </LText>
-          <LHeading size={2}>Зачем?</LHeading>
-          <br />
-          <CustomList>
-            <AListItem>примириться с собой;</AListItem>
-            <AListItem>получать больше удовольствия от жизни;</AListItem>
-            <AListItem>изучить слабые стороны;</AListItem>
-            <AListItem>подстелить соломки.</AListItem>
-          </CustomList>
-          <SPAN />
-        </Slide>
-        <Slide bgColor="red">
+        <Slide bgColor="red" id="fin">
           <Text caps fit textColor="primary">Всё</Text>
         </Slide>
         <Slide>
-          <LText textColor="quaternary">
+          <LText>
+             &nbsp;
+          </LText>
+          <LHeading size={3}>О чём не рассказал</LHeading>
+          <br />
+          <CustomList>
+            <ListItem>Фрейд — сексист?</ListItem>
+            <ListItem>Экзистенциальная терапия даёт гарантии, но они вам не понравятся.</ListItem>
+            <ListItem>Как мужчины и женщины рисуют велосипед.</ListItem>
+            <ListItem>Почему терапия нужна всем кто живёт в России?</ListItem>
+            <ListItem>Почему друзья не заменяют терапию?</ListItem>
+          </CustomList>
+          <SPAN />
+        </Slide>
+        <Slide id="contact">
+          <LText>
             &nbsp;
           </LText>
           <LHeading size={3}>Дима Семьюшкин</LHeading>
@@ -1021,7 +948,7 @@ export default class Presentation extends React.Component {
             <Fill>
               <LText>Пишите!</LText>
               <br />
-              <LText>devgru@mail.ru</LText>
+              <LText>devg.ru</LText>
               <br />
               <LText>t.me/dima_devgru</LText>
             </Fill>
