@@ -27,6 +27,7 @@ import levels from './images/levels.svg';
 import eap from './images/eap.gif';
 import me from './images/me.jpg';
 import skeletons from './images/skeletons.jpg';
+import trauma from './images/trauma.jpg';
 import paei from './images/paei.jpg';
 import bigFive from './images/big-five.png';
 import anxietyTech from './images/anxiety-tech.png';
@@ -162,15 +163,13 @@ const planList = [
   'Вдохновение',
   'Гигиена',
   'Специфика',
+  'Информационное окружение',
   'Ликбез',
   'Заблуждения',
 ];
 
 const plan = (index) => (
   <Slide bgColor="primary" textColor="tertiary" id={`part-${index + 1}`}>
-    <LText>
-      &nbsp;
-    </LText>
     <LHeading size={1}>
       Ψ → IT
     </LHeading>
@@ -205,7 +204,9 @@ export default class Presentation extends React.Component {
           <LHeading size={2} textColor="primary">
             для айтишников
           </LHeading>
-          <br />
+          <LText textColor="primary">
+            про стрессы и психотерапевтов
+          </LText>
           <br />
           <br />
           <br />
@@ -356,6 +357,126 @@ export default class Presentation extends React.Component {
             <p>Как иллюстрация того, на что провоцирует стресс.</p>
           </Notes>
         </Slide>
+        <Slide bgImage={depra} bgSize="contain" bgRepeat="no-repeat" >
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <LLText textColor="secondary" bgColor="primary">
+            Гигиена →
+          </LLText>
+          <LLHeading size={2} bgColor="primary">Депрессия</LLHeading>
+          <SPAN />
+          <Notes>
+            <p>Депрессия — описанное в МКБ состояние.</p>
+            <p>2 недели сниженного настроения, трудность концентрироваться, ощущение бессмысленности, неуместной вины, безнадёги, повторяющиеся мысли о смерти, изменения аппетита и сна, беспорядочные или замедленные мысли и движения, сниженная энергия и усталость.</p>
+            <p></p>
+          </Notes>
+        </Slide>
+        <Slide bgImage={burnout} bgSize="contain" bgRepeat="no-repeat">
+          <LLText bgColor="primary" textColor="secondary">
+            Гигиена →
+          </LLText>
+          <LLHeading bgColor="primary" size={3}>Выгорание</LLHeading>
+          <br />
+          <SPAN />
+          <Notes>
+            <p>Давайте посмотрим на одно из состояний, вызывающих порядочно резонанса в соцсетях — выгорание</p>
+            <p>Симптомы — эмоциональное опустошение, деперсонализация, отсутствие ощущения удовлетворения от работы.</p>
+            <p>Для меня основная характеристика выгорания это несопоставимость стресса и вознаграждения.</p>
+            <p>Собственно, направления для работы тут два: снижаем стресс, ищем вознаграждения.</p>
+          </Notes>
+        </Slide>
+        {plan(planStep++)}
+        <Slide>
+          <LText textColor="secondary">
+            Специфика →
+          </LText>
+          <LHeading size={3}>Опрос StackOverflow</LHeading>
+          <br />
+          <CustomList>
+            <ListItem>93% — мужчины;</ListItem>
+            <ListItem>75% — до 35 лет;</ListItem>
+            <ListItem>11,5% — сообщают о РЛ;</ListItem>
+            <ListItem>20% — жителей США имеют депрессию и/или тревогу.</ListItem>
+          </CustomList>
+          <br />
+          <RText textColor="secondary">Stack Overflow Developer survey, 2018</RText>
+          <RText textColor="secondary">insights.stackoverflow.com/survey/2018</RText>
+          <SPAN />
+        </Slide>
+        <Slide bgImage={mom} bgSize="75%" bgRepeat="no-repeat">
+          <SPAN />
+        </Slide>
+        <Slide bgImage={life} bgSize="contain" bgRepeat="no-repeat" bgPosition="80%">
+          <LLText bgColor="primary" textColor="secondary">
+            Специфика →
+          </LLText>
+          <LLHeading bgColor="primary" size={3}>Мышление</LLHeading>
+          <SPAN />
+          <Notes>
+            <p>Айтишники — яркий пример людей, работающих с абстракциями.</p>
+            <p>По сути, самая близкая к тому же программированию гуманитарная профессия — лингвист. Мы постоянно держим в голове сопоставления реального мира и абстрактного языка программирования, архитектуры системы и т.п.</p>
+            <p>Айтишников иногда описывают как безэмоциональных, но мне кажется тут есть простое недопонимание. Айтишники эмоциональны, просто их эмоции направлены на то, чем они занимаются.</p>
+          </Notes>
+        </Slide>
+        <Slide bgImage={deadline} bgSize="contain" bgRepeat="no-repeat" bgPosition="80%">
+          <LLText bgColor="primary" textColor="secondary">
+            Специфика →
+          </LLText>
+          <LLHeading bgColor="primary" size={3}>Культура</LLHeading>
+          <SPAN />
+          <Notes>
+            <p>По моим наблюдениям в айти не принято задумываться о своём здоровье.</p>
+            <p>Из-за этого </p>
+          </Notes>
+        </Slide>
+        <Slide bgImage={money} bgSize="contain" bgRepeat="no-repeat">
+          <LLText textColor="secondary" bgColor="primary">
+            Специфика →
+          </LLText>
+          <LLHeading bgColor="primary" size={2}>Зарплата</LLHeading>
+          <br />
+          <Notes>
+            <p>Хорошие зарплаты дают возможности:</p>
+            <p>качественно отдыхать;</p>
+            <p>учиться;</p>
+            <p>лечиться;</p>
+            <p>делегировать рутину;</p>
+            <p>выстраивать «лайфстайл».</p>
+            <p>Есть и другие бонусы айти —</p>
+            <p>возможен гибкий график;</p>
+            <p>возможна удалённая работа;</p>
+            <p>возможен быстрый карьерный рост;</p>
+            <p>большой рынок труда;</p>
+            <p>«непыльная» работа;</p>
+            <p>привычка учиться.</p>
+          </Notes>
+          <SPAN />
+        </Slide>
+        <Slide bgColor="secondary" bgImage={kraynov} bgSize="contain" bgRepeat="no-repeat">
+          <LText>
+            &nbsp;
+          </LText>
+          <Appear>
+            <LLHeading bgColor="primary" size={2}>Макс Крайнов</LLHeading>
+          </Appear>
+          <SPAN />
+          <Notes>
+            <p>Максим рассказывал в блоге, как объяснял это понятие сыну:</p>
+            <p>— Тебе нравится сегодняшний день? Да? Лайфстайл — это возможность его повторить тогда, когда тебе это удобно (или хочется).</p>
+          </Notes>
+        </Slide>
+        {plan(planStep++)}
         <Slide bgColor="black" bgImage={imja} bgSize="contain" bgRepeat="no-repeat">
           <LLText textColor="primary" bgColor="black">Информационное окружение →</LLText>
           <LLHeading size={2} textColor="primary" bgColor="black">Адриана</LLHeading>
@@ -440,126 +561,6 @@ export default class Presentation extends React.Component {
           <LLHeading size={2} textColor="primary" bgColor="black">Екатерина</LLHeading>
           <LLHeading size={2} textColor="primary" bgColor="black">Шульман</LLHeading>
           <SPAN />
-        </Slide>
-        <Slide bgImage={depra} bgSize="contain" bgRepeat="no-repeat" >
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <LLText textColor="secondary" bgColor="primary">
-            Гигиена →
-          </LLText>
-          <LLHeading size={2} bgColor="primary">Депрессия</LLHeading>
-          <SPAN />
-          <Notes>
-            <p>Депрессия — описанное в МКБ состояние.</p>
-            <p>2 недели сниженного настроения, трудность концентрироваться, ощущение бессмысленности, неуместной вины, безнадёги, повторяющиеся мысли о смерти, изменения аппетита и сна, беспорядочные или замедленные мысли и движения, сниженная энергия и усталость.</p>
-            <p></p>
-          </Notes>
-        </Slide>
-        <Slide bgImage={burnout} bgSize="contain" bgRepeat="no-repeat">
-          <LLText bgColor="primary" textColor="secondary">
-            Гигиена →
-          </LLText>
-          <LLHeading bgColor="primary" size={3}>Выгорание</LLHeading>
-          <br />
-          <SPAN />
-          <Notes>
-            <p>Давайте посмотрим на одно из состояний, вызывающих порядочно резонанса в соцсетях — выгорание</p>
-            <p>Симптомы — эмоциональное опустошение, деперсонализация, отсутствие ощущения удовлетворения от работы.</p>
-            <p>Для меня основная характеристика выгорания это несопоставимость стресса и вознаграждения.</p>
-            <p>Собственно, направления для работы тут два: снижаем стресс, ищем вознаграждения.</p>
-          </Notes>
-        </Slide>
-        {plan(planStep++)}
-        <Slide>
-          <LText textColor="secondary">
-            Специфика →
-          </LText>
-          <LHeading size={3}>Опрос StackOverflow</LHeading>
-          <br />
-          <CustomList>
-            <ListItem>93% — мужчины;</ListItem>
-            <ListItem>75% — до 35 лет;</ListItem>
-            <ListItem>11,5% — сообщают о РЛ;</ListItem>
-            <ListItem>20% — жителей США имеют депрессию и/или тревогу.</ListItem>
-          </CustomList>
-          <br />
-          <RText textColor="secondary">Stack Overflow Developer survey, 2018</RText>
-          <RText textColor="secondary">insights.stackoverflow.com/survey/2018</RText>
-          <SPAN />
-        </Slide>
-        <Slide bgImage={mom} bgSize="75%" bgRepeat="no-repeat">
-          <SPAN />
-        </Slide>
-        <Slide bgImage={life} bgSize="contain" bgRepeat="no-repeat" bgPosition="80%">
-          <LLText bgColor="primary" textColor="secondary">
-            Специфика →
-          </LLText>
-          <LLHeading bgColor="primary" size={3}>Мышление</LLHeading>
-          <SPAN />
-          <Notes>
-            <p>Айтишники — яркий пример людей, работающих с абстракциями.</p>
-            <p>По сути, самая близкая к тому же программированию гуманитарная профессия — лингвист. Мы постоянно держим в голове сопоставления реального мира и абстрактного языка программирования, архитектуры системы и т.п.</p>
-            <p>Айтишников иногда описывают как безэмоциональных, но мне кажется тут есть простое недопонимание. Айтишники эмоциональны, просто их эмоции направлены на то, чем они занимаются.</p>
-          </Notes>
-        </Slide>
-        <Slide bgImage={deadline} bgSize="contain" bgRepeat="no-repeat" bgPosition="80%">
-          <br />
-          <LLText bgColor="primary" textColor="secondary">
-            Специфика →
-          </LLText>
-          <LLHeading bgColor="primary" size={3}>Культура</LLHeading>
-          <SPAN />
-          <Notes>
-            <p>По моим наблюдениям в айти не принято задумываться о своём здоровье.</p>
-            <p>Из-за этого </p>
-          </Notes>
-        </Slide>
-        <Slide bgImage={money} bgSize="contain" bgRepeat="no-repeat">
-          <LLText textColor="secondary" bgColor="primary">
-            Специфика →
-          </LLText>
-          <LLHeading bgColor="primary" size={2}>Зарплата</LLHeading>
-          <br />
-          <Notes>
-            <p>Хорошие зарплаты дают возможности:</p>
-            <p>качественно отдыхать;</p>
-            <p>учиться;</p>
-            <p>лечиться;</p>
-            <p>делегировать рутину;</p>
-            <p>выстраивать «лайфстайл».</p>
-            <p>Есть и другие бонусы айти —</p>
-            <p>возможен гибкий график;</p>
-            <p>возможна удалённая работа;</p>
-            <p>возможен быстрый карьерный рост;</p>
-            <p>большой рынок труда;</p>
-            <p>«непыльная» работа;</p>
-            <p>привычка учиться.</p>
-          </Notes>
-          <SPAN />
-        </Slide>
-        <Slide bgColor="secondary" bgImage={kraynov} bgSize="contain" bgRepeat="no-repeat">
-          <LText>
-            &nbsp;
-          </LText>
-          <Appear>
-            <LLHeading bgColor="primary" size={2}>Макс Крайнов</LLHeading>
-          </Appear>
-          <SPAN />
-          <Notes>
-            <p>Максим рассказывал в блоге, как объяснял это понятие сыну:</p>
-            <p>— Тебе нравится сегодняшний день? Да? Лайфстайл — это возможность его повторить тогда, когда тебе это удобно (или хочется).</p>
-          </Notes>
         </Slide>
         {plan(planStep++)}
         <Slide>
@@ -843,6 +844,15 @@ export default class Presentation extends React.Component {
           <Appear>
             <SecondaryCT textColor="red" caps>НЕ-А</SecondaryCT>
           </Appear>
+        </Slide>
+        <Slide>
+          <LText textColor="secondary">
+            Заблуждения →
+          </LText>
+          <LHeading size={3}>Работа с травмой</LHeading>
+          <br />
+          <Image width="100%" src={trauma} />
+          <SPAN />
         </Slide>
         <Slide>
           <LText textColor="secondary">
