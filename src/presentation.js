@@ -360,6 +360,13 @@ export default class Presentation extends React.Component {
           <LText>
             Решения →
           </LText>
+          <LHeading size={2}>Кому надо —<br />тот и делает</LHeading>
+          <SPAN />
+        </Slide>
+        <Slide>
+          <LText>
+            Решения →
+          </LText>
           <LHeading size={3}>Помните о Дженге</LHeading>
           <br />
           <Image width="50%" src={jenga} />
