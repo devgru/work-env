@@ -33,11 +33,17 @@ import attention from './images/attention.png';
 import ropes from './images/ropes.png';
 import fest404 from './images/404.png';
 import dorofeevList from './images/dorofeev-list.png';
-import cycles from './images/cycles.png';
 import jenga from './images/jenga.png';
 import split from './images/split.png';
 import football from './images/football.jpeg';
 import compas from './images/compas.jpg';
+import psc from './images/psc.png';
+import juliaGrace from './images/julia-grace.png';
+import trust from './images/trust.png';
+import dodo from './images/dodo.png';
+import limits from './images/limits.jpg';
+import initiative from './images/initiative.jpg';
+import normal from './images/normal.png';
 
 const LHeading = styled(Heading)`
   text-align: left;
@@ -150,9 +156,10 @@ const theme = createTheme(
 const planList = [
   'О себе',
   'Дисклеймер',
-  'Стресс',
-  'Удовольствие',
+  'Ограничения',
+  'Вознаграждения',
   'Мысли',
+  'Рекомендации',
 ];
 
 const plan = (index) => (
@@ -192,7 +199,7 @@ export default class Presentation extends React.Component {
             для айтишников
           </LHeading>
           <LText textColor="primary">
-            про работу в команде
+            про рабочую атмосферу
           </LText>
           <br />
           <br />
@@ -278,15 +285,30 @@ export default class Presentation extends React.Component {
         {plan(planStep++)}
         <Slide>
           <LText>
-            Стресс →
+            Ограничения →
           </LText>
-          <LHeading size={2}>Скачки внимания</LHeading>
+          <LHeading size={2}>Внимание</LHeading>
           <Image width="75%" src={attention} />
           <SPAN />
         </Slide>
         <Slide>
           <LText>
-            Стресс →
+            Ограничения →
+          </LText>
+          <LHeading size={2}>Внимание</LHeading>
+          <br />
+          <br />
+          <LText>Про 23 минуты:</LText>
+          <br />
+          <CustomList>
+            <ListItem>EN: bit.ly/2i93WQM</ListItem>
+            <ListItem>RU: habr.com/post/396005/</ListItem>
+          </CustomList>
+          <SPAN />
+        </Slide>
+        <Slide>
+          <LText>
+            Ограничения →
           </LText>
           <LHeading size={2}>Коммуникация</LHeading>
           <LImage width="75%" src={trees} />
@@ -294,16 +316,16 @@ export default class Presentation extends React.Component {
         </Slide>
         <Slide bgImage={ropes} bgSize="contain" bgRepeat="no-repeat">
           <LLText bgColor="primary">
-            Стресс →
+            Ограничения →
           </LLText>
           <LLHeading size={2} bgColor="primary">Сложность</LLHeading>
           <SPAN />
         </Slide>
         <Slide>
           <LText>
-            Стресс →
+            Ограничения →
           </LText>
-          <LHeading size={3}>Странные ожидания</LHeading>
+          <LHeading size={3}>Время</LHeading>
           <br />
           <Image width="50%" src={eightHour} />
           <SPAN />
@@ -311,37 +333,34 @@ export default class Presentation extends React.Component {
         {plan(planStep++)}
         <Slide>
           <LText>
-            Удовольствие →
-          </LText>
-          <LHeading size={2}>Признание</LHeading>
-          <SPAN />
-        </Slide>
-        <Slide>
-          <LText>
-            Удовольствие →
+            Вознаграждения →
           </LText>
           <LHeading size={2}>Доверие</LHeading>
+          <br />
+          <Image width="100%" src={trust} />
           <SPAN />
         </Slide>
         <Slide>
           <LText>
-            Удовольствие →
+            Вознаграждения →
           </LText>
           <LHeading size={2}>Право на ошибку</LHeading>
+          <br />
+          <Image width="100%" src={dodo} />
           <SPAN />
         </Slide>
         <Slide>
           <LText>
-            Удовольствие →
+            Вознаграждения →
           </LText>
-          <LHeading size={2}>Причастность</LHeading>
+          <LHeading size={2}>Признание</LHeading>
           <br />
           <Image width="100%" src={football} />
           <SPAN />
         </Slide>
         <Slide>
           <LText>
-            Удовольствие →
+            Вознаграждения →
           </LText>
           <LHeading size={2}>Творчество</LHeading>
           <br />
@@ -353,16 +372,8 @@ export default class Presentation extends React.Component {
           <LText>
             Мысли →
           </LText>
-          <LHeading size={2}>Компас — это вы</LHeading>
-          <br />
-          <Image width="100%" src={compas} />
-          <SPAN />
-        </Slide>
-        <Slide>
-          <LText>
-            Мысли →
-          </LText>
-          <LHeading size={2}>Называйте вещи своими именами</LHeading>
+          <LHeading size={2}>Пара слов<br />о нормальности</LHeading>
+          <Image width="100%" src={normal} />
           <SPAN />
         </Slide>
         <Slide>
@@ -370,6 +381,7 @@ export default class Presentation extends React.Component {
             Мысли →
           </LText>
           <LHeading size={2}>Кому надо —<br />тот и делает</LHeading>
+          <Image width="75%" src={initiative} />
           <SPAN />
         </Slide>
         <Slide>
@@ -381,6 +393,24 @@ export default class Presentation extends React.Component {
           <Image width="50%" src={jenga} />
           <SPAN />
         </Slide>
+        <Slide>
+          <LText>
+            Мысли →
+          </LText>
+          <LHeading size={3}>What about limits?</LHeading>
+          <Image width="80%" src={limits} />
+          <SPAN />
+        </Slide>
+        <Slide>
+          <LText>
+            Мысли →
+          </LText>
+          <LHeading size={2}>Компас — это вы</LHeading>
+          <br />
+          <Image width="100%" src={compas} />
+          <SPAN />
+        </Slide>
+        {plan(planStep++)}
         <Slide bgColor="black" bgImage={dorofeev} bgSize="contain" bgRepeat="no-repeat">
           <br />
           <br />
@@ -399,19 +429,18 @@ export default class Presentation extends React.Component {
         </Slide>
         <Slide>
           <LText>
-            Мысли →
+            Рекомендации →
           </LText>
-          <LHeading size={2}>Ищите циклы!</LHeading>
-          <Image width="75%" src={cycles} />
+          <LHeading size={3}>Доклады Дорофеева</LHeading>
+          <br />
+          <LImage width="100%" src={dorofeevList} />
+          <SPAN />
+        </Slide>
+        <Slide bgColor="black" bgImage={juliaGrace} bgSize="contain" bgRepeat="no-repeat">
           <SPAN />
         </Slide>
         <Slide>
-          <LText>
-            Мысли →
-          </LText>
-          <LHeading size={2}>Смотрите</LHeading>
-          <br />
-          <LImage width="100%" src={dorofeevList} />
+          <Image width="80%" src={psc} />
           <SPAN />
         </Slide>
         <Slide bgColor="red" id="fin">
@@ -433,6 +462,8 @@ export default class Presentation extends React.Component {
               <LText>devg.ru</LText>
               <br />
               <LText>t.me/dima_devgru</LText>
+              <br />
+              <LText>t.me/devgru_channel</LText>
             </Fill>
           </Layout>
         </Slide>
