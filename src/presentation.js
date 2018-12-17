@@ -463,7 +463,7 @@ export default class Presentation extends React.Component {
               <br />
               <LText>t.me/dima_devgru</LText>
               <br />
-              <LText>t.me/devgru_channel</LText>
+              <LText>t.me/life_refactoring</LText>
             </Fill>
           </Layout>
         </Slide>
